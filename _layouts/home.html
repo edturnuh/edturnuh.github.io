@@ -2,33 +2,44 @@
 layout: default
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+<div class="name centered">
+    <h1>Ed Turner</h1>
 
-  {{ content }}
+      <div class="type-wrap">
+        <div id="typed-strings" style="display: none;">
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+            <p>Digital marketer</p>
+            <p>Web developer</p>
+            <p>Maker of stuff</p>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
-
+        </div>
+        <span id="typed" style="white-space:pre;"></span>
+      </div>
+        <a class="links" target="_blank" href="https://www.linkedin.com/in/ed-turner-98a77114/">on LinkedIn</a>
+        <a class="links" target="_blank" href="http://www.twitter.com/edturnuh">on Twitter</a>
+        <a class="links" target="_blank" href="http://www.instagram.com/edturnuh">on Instagram</a>
+        <a class="links" target="_blank" href="https://www.producthunt.com/@edturnuh">on Product Hunt</a>
+        <a class="links" target="_blank" href="mailto:edward_turner@hotmail.co.uk">via Email</a>
 </div>
+
+<script>
+    var typed = new Typed("#typed", {
+        stringsElement: '#typed-strings',
+        typeSpeed: 30,
+        backSpeed: 15,
+        backDelay: 1000,
+        startDelay: 800,
+        loop: true,
+        onComplete: function(self) { console.log('onCmplete ' + self) },
+        preStringTyped: function(pos, self) { console.log('preStringTyped ' + pos + ' ' + self); },
+        onStringTyped: function(pos, self) { console.log('onStringTyped ' + pos + ' ' + self) },
+        onLastStringBackspaced: function(self) { console.log('onLastStringBackspaced ' + self) },
+        onTypingPaused: function(pos, self) { console.log('onTypingPaused ' + pos + ' ' + self) },
+        onTypingResumed: function(pos, self) { console.log('onTypingResumed ' + pos + ' ' + self) },
+        onReset: function(self) { console.log('onReset ' + self) },
+        onStop: function(pos, self) { console.log('onStop ' + pos + ' ' + self) },
+        onStart: function(pos, self) { console.log('onStart ' + pos + ' ' + self) },
+        onDestroy: function(self) { console.log('onDestroy ' + self) }
+      });
+
+</script>
