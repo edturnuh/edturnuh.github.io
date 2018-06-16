@@ -12,7 +12,6 @@ bullet-1: Digital marketer
 bullet-2: Web developer
 bullet-3: Maker of stuff
 
-
 social-text-1: on LinkedIn
 social-link-1: https://www.linkedin.com/in/ed-turner-98a77114/
 social-text-2: on Twitter
