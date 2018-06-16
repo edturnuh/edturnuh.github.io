@@ -4,7 +4,9 @@
 
 layout: home
 
-title: Ed Turner
+title: Ed Turner!
+
+backgroundImage: /ed-turner-profile-alt.jpg
 
 bullet-1: Digital marketer
 bullet-2: Web developer
