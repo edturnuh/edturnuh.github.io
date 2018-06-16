@@ -4,7 +4,7 @@
 
 layout: home
 
-title: Ed Turner!
+title: Ed Turner
 
 backgroundImage: /ed-turner-profile-alt.jpg
 
