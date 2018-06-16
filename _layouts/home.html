@@ -1,25 +1,26 @@
 ---
 layout: default
+
 ---
 
 <div class="name centered">
-    <h1>Ed Turner</h1>
+    <h1>{{ page.title }}</h1>
 
       <div class="type-wrap">
         <div id="typed-strings" style="display: none;">
 
-            <p>Digital marketer</p>
-            <p>Web developer</p>
-            <p>Maker of stuff</p>
+            <p>{{ page.bullet-1 }}</p>
+            <p>{{ page.bullet-2 }}</p>
+            <p>{{ page.bullet-3 }}</p>
 
         </div>
         <span id="typed" style="white-space:pre;"></span>
       </div>
-        <a class="links" target="_blank" href="https://www.linkedin.com/in/ed-turner-98a77114/">on LinkedIn</a>
-        <a class="links" target="_blank" href="http://www.twitter.com/edturnuh">on Twitter</a>
-        <a class="links" target="_blank" href="http://www.instagram.com/edturnuh">on Instagram</a>
-        <a class="links" target="_blank" href="https://www.producthunt.com/@edturnuh">on Product Hunt</a>
-        <a class="links" target="_blank" href="mailto:edward_turner@hotmail.co.uk">via Email</a>
+        <a class="links" target="_blank" href="{{ page.social-link-1 }}">{{ page.social-text-1 }}</a>
+        <a class="links" target="_blank" href="{{ page.social-link-2 }}">{{ page.social-text-2 }}</a>
+        <a class="links" target="_blank" href="{{ page.social-link-3 }}">{{ page.social-text-3 }}</a>
+        <a class="links" target="_blank" href="{{ page.social-link-4 }}">{{ page.social-text-4 }}</a>
+        <a class="links" target="_blank" href="{{ page.social-link-5 }}">{{ page.social-text-5 }}</a>
 </div>
 
 <script>
