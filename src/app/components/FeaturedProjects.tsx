@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { ProjectCard } from './ProjectCard';
 import { ProjectModal } from './ProjectModal';
-import imgImage1 from "figma:asset/844713ad5df9fdadf4b095de061286ec2c75319c.png";
-import imgImage2 from "figma:asset/9f91f321674b8646d1b8b94d1dd750f0a601f73e.png";
-import imgImage3 from "figma:asset/1d39590100ec3e8f2a69c7e9a9a2c86250dbc486.png";
+const imgImage1 = "/orange.png";
+const imgImage2 = "/blue.png";
+const imgImage3 = "/green.png";
+
 
 const projects = [
   {
@@ -200,8 +201,8 @@ export function FeaturedProjects() {
       <section id="projects" className="pt-8 md:pt-12 pb-10 md:pb-16">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="mb-10 md:mb-16">
-            
-            
+
+
           </div>
 
           {/* Tall scroll container */}

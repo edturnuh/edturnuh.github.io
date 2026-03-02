@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import imgImageWithFallback from "figma:asset/844713ad5df9fdadf4b095de061286ec2c75319c.png";
-import imgImageWithFallback1 from "figma:asset/9f91f321674b8646d1b8b94d1dd750f0a601f73e.png";
-import imgImageWithFallback2 from "figma:asset/1d39590100ec3e8f2a69c7e9a9a2c86250dbc486.png";
-import imgImageWithFallback3 from "figma:asset/a428376d9c7141fcc6a50336dc3c39057a7d4ecc.png";
+const imgImageWithFallback = "/orange.png";
+const imgImageWithFallback1 = "/orange.png";
+const imgImageWithFallback2 = "/orange.png";
+const imgImageWithFallback3 = "/orange.png";
 type Wrapper3Props = {
   additionalClassNames?: string;
 };
