@@ -4,7 +4,7 @@
 
 // Rotating text array - add or remove items as needed
 export const ROTATING_TEXT = [
-  'grow revenue',
+  'unlock revenue',
   'boost conversion',
   'streamline ops',
   'transform websites.',

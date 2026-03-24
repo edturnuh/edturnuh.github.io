@@ -136,8 +136,12 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
   },
 ];
 
+const DESKTOP_STACK_OFFSET = 22;
+const DESKTOP_STACK_SCALE_STEP = 0.025;
+
 export function FeaturedProjects() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const totalProjects = projects.length;
 
   return (
     <>
@@ -146,14 +150,16 @@ export function FeaturedProjects() {
           <div className="mb-10 md:mb-16"></div>
           
           {/* Pure CSS sticky stacking - smooth on all devices */}
-          <div className="relative">
+          <div className="project-stack relative">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="sticky mb-4 md:mb-6 2xl:top-[230px]"
+                className="project-stack__item sticky mb-4 md:mb-6 2xl:top-[230px]"
                 style={{
                   top: `${130}px`,
                   zIndex: index + 1,
+                  ['--stack-offset' as string]: `${index * DESKTOP_STACK_OFFSET}px`,
+                  ['--stack-scale' as string]: `${1 - ((totalProjects - 1 - index) * DESKTOP_STACK_SCALE_STEP)}`,
                 }}
               >
                 <ProjectCard

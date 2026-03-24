@@ -49,7 +49,7 @@ export function Hero() {
         transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
         className="max-w-[630px] text-[16px] leading-[1.7] text-[#d4d4d4] md:pt-[5px] md:text-[17px]"
       >
-        I blend growth, product thinking, and hands-on web execution to help ambitious firms unlock revenue, streamline operations, and ship better digital experiences faster.
+        I combine a 10 year growth/marketing career with being a self-taught developer. Currently at Allica Bank (Series D, 2026). Now documenting work in this portfolio :)
       </motion.p>
     </section>
   );

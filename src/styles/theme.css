@@ -220,6 +220,20 @@
     animation: fade-in-up 0.6s ease-out;
   }
 
+  @media (min-width: 768px) {
+    .project-stack {
+      perspective: 1400px;
+      perspective-origin: center top;
+    }
+
+    .project-stack__item {
+      transform: translate3d(0, var(--stack-offset, 0px), 0) scale(var(--stack-scale, 1));
+      transform-origin: center top;
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+  }
+
   .animate-fade-in {
     animation: fade-in 0.2s ease-out;
   }

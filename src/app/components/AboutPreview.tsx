@@ -16,7 +16,7 @@ export function AboutPreview() {
           <h2 className="sr-only">About Edward Turner</h2>
           <p 
             className="text-[16px] leading-[1.7] text-neutral-300 mb-4"
-            dangerouslySetInnerHTML={{ __html: "I made my first website when I was 9 and I've been hooked ever since. Now, after 10 years in growth/marketing I'm specialising in product management for all things 'public web'. Currently website manager at Allica Bank, the UK's fastest-growing firm (FT, 2025). We just raised a <u><a href='https://thenextweb.com/news/allica-bank-joins-the-fintech-unicorn-club-after-155m-series-d-round'>Series D</a></u>! 🦄 <br><br>I like to work fast. Trying to go faster with Claude / Figma / Grok / n8n." }}
+            dangerouslySetInnerHTML={{ __html: "I made my first website when I was 9 and I've been hooked ever since. Now, after 10 years in growth/marketing I'm specialising in product management for all things 'public web'. Currently website manager at Allica Bank, the UK's fastest-growing firm (FT, 2025). We just raised a <u><a href='https://thenextweb.com/news/allica-bank-joins-the-fintech-unicorn-club-after-155m-series-d-round'>Series D</a></u>! 🦄 <br><br>I like to work fast. Trying to go faster with Codex, Figma & OpenClaw." }}
           />
           
         </div>
