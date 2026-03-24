@@ -15,38 +15,41 @@ export function Hero() {
 
   return (
     <section className="pt-[30px] md:pt-[97px] 2xl:pt-[130px] pb-[18px] md:pb-[15px] 2xl:pb-[65px]">
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="leading-[1.265] md:leading-[90px] font-normal text-[#F5F3EF] mb-6 max-w-[720px] md:max-w-full text-[32px] md:text-[85px]"
+        className="max-w-[1120px]"
       >
-        <span className="font-semibold">Marketing Web</span> <br />
-        <span className="inline-block relative min-h-[1.15em] overflow-hidden align-top whitespace-nowrap" style={{ display: 'inline-block', position: 'relative' }}>
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={currentIndex}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: HERO_ANIMATION.transitionDuration / 1000, ease: 'easeInOut' }}
-              style={{ display: 'inline-block', position: 'relative' }}
-              className="whitespace-nowrap"
-            >
-              {ROTATING_TEXT[currentIndex]}
-            </motion.span>
-          </AnimatePresence>
-        </span>
-      </motion.h1>
+        <h1 className="mb-6 text-[34px] leading-[1.02] font-medium tracking-[-0.05em] text-[#F5F3EF] sm:text-[46px] md:text-[68px] lg:text-[82px] 2xl:text-[96px]">
+          <span>Website product manager helping brilliant brands </span>
+          <span className="relative inline-flex min-h-[1.1em] min-w-[7.5ch] align-top text-[#F5F3EF]">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={currentIndex}
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -28 }}
+                transition={{ duration: HERO_ANIMATION.transitionDuration / 1000, ease: 'easeInOut' }}
+                className="absolute inset-0 whitespace-normal break-words"
+              >
+                {ROTATING_TEXT[currentIndex]}
+              </motion.span>
+            </AnimatePresence>
+            <span className="invisible whitespace-normal break-words">
+              optimise performance
+            </span>
+          </span>
+        </h1>
+      </motion.div>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
-        className="leading-[1.6] md:max-w-[600px] md:pt-[5px] text-[16px] text-[#d4d4d4]"
-      >I combine a 10 year growth/marketing career with being a self-taught developer. Currently at Allica Bank (Series D, 2026). Now documenting work in this portfolio :)
-
-
+        className="max-w-[630px] text-[16px] leading-[1.7] text-[#d4d4d4] md:pt-[5px] md:text-[17px]"
+      >
+        I blend growth, product thinking, and hands-on web execution to help ambitious firms unlock revenue, streamline operations, and ship better digital experiences faster.
       </motion.p>
     </section>
   );

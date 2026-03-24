@@ -4,10 +4,10 @@
 
 // Rotating text array - add or remove items as needed
 export const ROTATING_TEXT = [
-  'Product Management',
-  'Optimisation',
-  'Transformation',
-  'Strategy',
+  'grow revenue',
+  'boost conversion',
+  'streamline ops',
+  'transform websites.',
 ];
 
 // Animation timing (in milliseconds)
