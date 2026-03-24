@@ -1,5 +1,5 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import profileImage from 'figma:asset/9df415058f0535f1d55f3e0d8992a67ce86b9f72.png';
+import profileImage from '../../assets/9df415058f0535f1d55f3e0d8992a67ce86b9f72.png';
 
 export function AboutPreview() {
   return (

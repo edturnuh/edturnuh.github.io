@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 import { ProjectModal } from './ProjectModal';
-import imgImage1 from "figma:asset/e36e214886c9798d7ecd4e0bc01379d32f57587c.png";
-import imgImage2 from "figma:asset/cb03a2b08a1d307250c5e359e10e28fa18685edd.png";
-import imgImage3 from "figma:asset/f1aee0b8181b32715025f2bef3c3a6632d78683a.png";
+import imgImage1 from "../../assets/e36e214886c9798d7ecd4e0bc01379d32f57587c.png";
+import imgImage2 from "../../assets/cb03a2b08a1d307250c5e359e10e28fa18685edd.png";
+import imgImage3 from "../../assets/f1aee0b8181b32715025f2bef3c3a6632d78683a.png";
 
 const projects = [
   {
