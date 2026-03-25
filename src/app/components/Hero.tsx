@@ -49,7 +49,7 @@ export function Hero() {
         transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
         className="max-w-[630px] text-[16px] leading-[1.7] text-[#d4d4d4] md:pt-[5px] md:text-[17px]"
       >
-        My USP is that I combine a 10-year career in growth marketing/user acquisition with deep technical expertise in websites/AI.  Currently at Allica Bank (Series D, 2026), and I've just started documenting work here :)
+        I combine deep technical expertise with a 10-year career in growth marketing. Currently at Allica Bank (Series D, 2026). I've just started documenting work on this portfolio :)
       </motion.p>
     </section>
   );

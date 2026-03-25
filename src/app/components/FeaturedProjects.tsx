@@ -4,9 +4,38 @@ import { ProjectModal } from './ProjectModal';
 import imgImage1 from "../../assets/e36e214886c9798d7ecd4e0bc01379d32f57587c.png";
 import imgImage2 from "../../assets/cb03a2b08a1d307250c5e359e10e28fa18685edd.png";
 import imgImage3 from "../../assets/f1aee0b8181b32715025f2bef3c3a6632d78683a.png";
+import figmaCodexThumbnail from "../../assets/figma-codex-thumbnail.svg";
 import tetrisThumbnail from "../../assets/tetris-thumbnail.svg";
 
 const projects = [
+  {
+    client: 'Unlocking scale through 55% conversion uplift',
+    subtitle: '2026',
+    result: 'Allica Bank',
+    cardBg: '#ffffff',
+    titleColor: 'text-[#010293]',
+    labelColor: 'rgba(1,2,147,0.55)',
+    borderColor: 'border-[rgba(43,127,255,0.2)]',
+    glowColor: 'shadow-[0px_25px_50px_-12px_rgba(43,127,255,0.1)]',
+    statGradient: 'from-[#2b7fff] to-[#00b8db]',
+    tintColor: 'rgba(43,127,255,0.15)',
+    image: imgImage2,
+    description: 'Complete overhaul of the signup and onboarding experience for a B2B SaaS platform.',
+    tags: ['Analytics', 'CRO', 'XFN Leadership'],
+    detailedDescription: `Improving conversion rates while scaling aggressively drove Allica's flagship business current account growth. We tested new UIs, conversion flows and trust signals; segmented heavily; unlocked major scale (e.g. £20m/month in balances from a single channel). Reducing CAC helped fuel 5x balance growth in under 2 years. Allica ranked #1 fastest-growing company in UK (FT1000 2025), and we just raised our Series D at $1.2bn valuation (2026).`,
+    images: [imgImage2, imgImage2],
+    metrics: [
+      { label: 'Conversion Rate', value: '55%+' },
+      { label: 'More leads/yr', value: '~7,000' },
+      { label: 'Growth', value: '5x' },
+    ],
+    deepDive: {
+      title: 'Form Placement A/B Test',
+      description: `Users clicking the CTA were auto-scrolled to page bottom, disrupting their experience and our scroll-depth tracking. With 30–40% of high-intent traffic hitting the button, we embedded the form in a modal popup instead. Result: +18% form submissions, rolled out site-wide.`,
+      image: imgImage2,
+      stat: { label: 'Form Submissions', value: '+18%' },
+    },
+  },
   {
     client: 'Rebuilding a $1.2bn bank’s website in 4 months',
     subtitle: '2025',
@@ -52,35 +81,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
     },
   },
   {
-    client: 'Unlocking scale through 55% conversion uplift',
-    subtitle: '2026',
-    result: 'Allica Bank',
-    cardBg: '#ffffff',
-    titleColor: 'text-[#010293]',
-    labelColor: 'rgba(1,2,147,0.55)',
-    borderColor: 'border-[rgba(43,127,255,0.2)]',
-    glowColor: 'shadow-[0px_25px_50px_-12px_rgba(43,127,255,0.1)]',
-    statGradient: 'from-[#2b7fff] to-[#00b8db]',
-    tintColor: 'rgba(43,127,255,0.15)',
-    image: imgImage2,
-    description: 'Complete overhaul of the signup and onboarding experience for a B2B SaaS platform.',
-    tags: ['Analytics', 'CRO', 'XFN Leadership'],
-    detailedDescription: `Improving conversion rates while scaling aggressively drove Allica's flagship business current account growth. We tested new UIs, conversion flows and trust signals; segmented heavily; unlocked major scale (e.g. £20m/month in balances from a single channel). Reducing CAC helped fuel 5x balance growth in under 2 years. Allica ranked #1 fastest-growing company in UK (FT1000 2025), and we just raised our Series D at $1.2bn valuation (2026).`,
-    images: [imgImage2, imgImage2],
-    metrics: [
-      { label: 'Conversion Rate', value: '55%+' },
-      { label: 'More leads/yr', value: '~7,000' },
-      { label: 'Growth', value: '5x' },
-    ],
-    deepDive: {
-      title: 'Form Placement A/B Test',
-      description: `Users clicking the CTA were auto-scrolled to page bottom, disrupting their experience and our scroll-depth tracking. With 30–40% of high-intent traffic hitting the button, we embedded the form in a modal popup instead. Result: +18% form submissions, rolled out site-wide.`,
-      image: imgImage2,
-      stat: { label: 'Form Submissions', value: '+18%' },
-    },
-  },
-  {
-    client: 'Launching a £100k/month Shopify store',
+    client: 'Scaling to £100k/month on Shopify',
     subtitle: '2022',
     result: 'TAUR',
     cardBg: '#373737',
@@ -108,9 +109,9 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
     },
   },
   {
-    client: 'Can you build a portfolio site with AI?',
+    client: 'Building an online portfolio with AI',
     subtitle: '2026',
-    result: 'Me',
+    result: 'For me',
     cardBg: '#fd0',
     titleColor: 'text-[#3d3b54]',
     labelColor: 'rgba(61,59,84,0.7)',
@@ -118,7 +119,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
     glowColor: 'shadow-[0px_25px_50px_-12px_rgba(255,221,0,0.15)]',
     statGradient: 'from-[#3d3b54] to-[#5a5770]',
     tintColor: 'rgba(61,59,84,0.1)',
-    image: imgImage1,
+    image: figmaCodexThumbnail,
     description: 'Designed in Figma, built with Claude—shipped in hours instead of weeks.',
     tags: ['AI', 'Design Systems', 'Rapid Prototyping'],
     detailedDescription: `I wanted a portfolio that showcased real work without spending weeks coding from scratch. Figma let me design pixel-perfect layouts with component variants, auto-layout, and a proper design system. Claude took those designs and generated production-ready React code with sticky scroll effects, modals, accessibility features, and responsive layouts. The result? A polished, performant site built in a fraction of the time traditional development would take—proof that AI can supercharge the entire design-to-code workflow.`,
@@ -128,17 +129,11 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
       { label: 'Components', value: '8+' },
       { label: 'Code Quality', value: 'A+' },
     ],
-    deepDive: {
-      title: 'AI-Powered Design-to-Code Pipeline',
-      description: 'Traditional portfolio builds can take weeks of design iteration, component building, and responsive testing. By pairing Figma\'s design tooling with Claude\'s code generation, I compressed that timeline dramatically. Figma handled the visual system and component architecture; Claude translated it into clean React with proper state management, animations, and accessibility. The workflow felt like pair programming with an expert frontend dev.',
-      image: imgImage1,
-      stat: { label: 'Time Saved', value: '90%+' },
-    },
   },
   {
-    client: 'Built a browser Tetris people can actually play',
+    client: 'Cheeky game of Tetris?',
     subtitle: '2026',
-    result: 'Personal Build',
+    result: 'For you',
     cardBg: '#11151d',
     titleColor: 'text-[#f5f3ef]',
     labelColor: 'rgba(245,243,239,0.68)',
@@ -160,11 +155,6 @@ Just as importantly, the experience is accessible. Controls are available withou
       { label: 'Pieces', value: '7' },
       { label: 'Inputs', value: 'Keys + UI' },
     ],
-    deepDive: {
-      title: 'Designing for responsiveness without visual noise',
-      description: `The challenge was making the game feel polished inside a case-study modal rather than like a hacked-in side project. I kept the rendering model simple, avoided scroll-linked effects, used clear spacing and contrast, and added direct controls alongside keyboard support. The result is a compact, self-contained experience that feels intentional instead of ornamental.`,
-      stat: { label: 'Dependency approach', value: 'No game lib' },
-    },
     liveDemo: 'tetris' as const,
   },
 ];

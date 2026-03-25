@@ -15,7 +15,6 @@ interface ProjectModalProps {
     statGradient: string;
     image: string;
     detailedDescription: string;
-    images: string[];
     metrics: { label: string; value: string }[];
     deepDive?: {
       title: string;
@@ -88,24 +87,6 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
     '#373737': '#7ddfaa',   // dark card → soft mint
   };
   const accent = accentMap[project.cardBg] || '#888888';
-
-  /**
-   * Extracts a YouTube video ID from various URL formats.
-   * Returns null if the URL is not a YouTube link.
-   */
-  function getYouTubeId(url: string): string | null {
-    const patterns = [
-      /(?:youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})/,
-      /(?:youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
-      /(?:youtu\.be\/)([a-zA-Z0-9_-]{11})/,
-      /(?:youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/,
-    ];
-    for (const pattern of patterns) {
-      const match = url.match(pattern);
-      if (match) return match[1];
-    }
-    return null;
-  }
 
   return (
     <div
@@ -319,45 +300,6 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
               <div className="mx-5 mt-5 md:mx-8 md:mt-6 border-t border-white/[0.07]" />
             </>
           )}
-
-          {/* Gallery */}
-          <div className="px-5 pt-4 md:px-8 md:pt-5">
-            <span
-              className="font-mono text-[13.2px] md:text-[13px] uppercase tracking-wider block mb-4 text-neutral-400"
-            >
-              Gallery
-            </span>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-              {project.images.map((item, index) => {
-                const ytId = getYouTubeId(item);
-                if (ytId) {
-                  return (
-                    <div key={index} className="relative overflow-hidden aspect-video bg-black">
-                      <iframe
-                        src={`https://www.youtube-nocookie.com/embed/${ytId}`}
-                        title={`${project.client} video ${index + 1}`}
-                        className="w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                  );
-                }
-                return (
-                  <div key={index} className="relative overflow-hidden">
-                    <ImageWithFallback
-                      src={item}
-                      alt={`${project.client} screenshot ${index + 1}`}
-                      className="w-full h-[200px] object-cover"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Divider line */}
-          <div className="mx-5 mt-5 md:mx-8 md:mt-6 border-t border-white/[0.07]" />
 
           {/* Tags */}
           <div className="px-5 pt-4 pb-6 md:px-8 md:pt-5 md:pb-8">

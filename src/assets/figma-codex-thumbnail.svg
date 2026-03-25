@@ -1,0 +1,75 @@
+<svg width="1600" height="1067" viewBox="0 0 1600 1067" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="181" y1="98" x2="1414" y2="981" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE14A"/>
+      <stop offset="1" stop-color="#F4C400"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="312" y1="222" x2="1289" y2="844" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6C8" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#FFE57A" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="shadow" x="195" y="119" width="1210" height="827" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="32" stdDeviation="48" flood-color="#7B5E00" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1067" fill="url(#bg)"/>
+  <rect width="1600" height="1067" fill="#1C1600" opacity="0.04"/>
+  <rect width="1600" height="1067" filter="url(#grain)"/>
+
+  <g opacity="0.22">
+    <circle cx="1312" cy="202" r="173" fill="#FFF3AF"/>
+    <circle cx="252" cy="905" r="213" fill="#FFF3AF"/>
+    <path d="M117 159C209 110 356 119 441 194" stroke="#6A5100" stroke-opacity="0.18" stroke-width="14" stroke-linecap="round"/>
+    <path d="M1169 883C1247 813 1371 786 1490 808" stroke="#6A5100" stroke-opacity="0.18" stroke-width="14" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="267" y="191" width="1066" height="685" rx="42" fill="#3D3B54"/>
+    <rect x="290" y="214" width="1020" height="639" rx="28" fill="url(#panel)"/>
+    <rect x="290" y="214" width="1020" height="639" rx="28" stroke="#3D3B54" stroke-opacity="0.14" stroke-width="2"/>
+  </g>
+
+  <g opacity="0.35">
+    <path d="M393 298H1207" stroke="#3D3B54" stroke-opacity="0.12" stroke-width="3"/>
+    <path d="M393 769H1207" stroke="#3D3B54" stroke-opacity="0.12" stroke-width="3"/>
+  </g>
+
+  <g>
+    <rect x="395" y="336" width="332" height="394" rx="34" fill="#FFF2B7"/>
+    <rect x="429" y="370" width="264" height="326" rx="24" fill="#FFF9DB"/>
+    <g transform="translate(484 418)">
+      <rect width="112" height="56" rx="28" fill="#F24E1E"/>
+      <rect y="56" width="112" height="56" rx="28" fill="#A259FF"/>
+      <circle cx="84" cy="140" r="28" fill="#1ABCFE"/>
+      <path d="M56 112C86.9279 112 112 137.072 112 168C112 198.928 86.9279 224 56 224C25.0721 224 0 198.928 0 168C0 137.072 25.0721 112 56 112Z" fill="#0ACF83"/>
+      <path d="M56 0C86.9279 0 112 25.0721 112 56C112 86.9279 86.9279 112 56 112C25.0721 112 0 86.9279 0 56C0 25.0721 25.0721 0 56 0Z" fill="#FF7262"/>
+    </g>
+    <text x="561" y="662" text-anchor="middle" fill="#3D3B54" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="56" font-weight="700" letter-spacing="-0.03em">Figma</text>
+  </g>
+
+  <g>
+    <rect x="871" y="336" width="332" height="394" rx="34" fill="#FFF2B7"/>
+    <rect x="905" y="370" width="264" height="326" rx="24" fill="#FFF9DB"/>
+    <g transform="translate(959 426)">
+      <path d="M97.2 28L58.4 50.4V95.2L97.2 117.6L136 95.2V50.4L97.2 28Z" fill="#11151D"/>
+      <path d="M97.2 0L153.6 32.4V97.2L97.2 129.6L40.8 97.2V32.4L97.2 0Z" stroke="#3D3B54" stroke-width="16"/>
+      <path d="M97.2 157L56.8 180.4V227.2L97.2 250.6L137.6 227.2V180.4L97.2 157Z" fill="#FFF2B7" stroke="#3D3B54" stroke-width="16"/>
+      <path d="M97.2 138V270" stroke="#3D3B54" stroke-width="16" stroke-linecap="round"/>
+      <path d="M40.8 97.2L97.2 129.6L153.6 97.2" stroke="#3D3B54" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="1037" y="662" text-anchor="middle" fill="#3D3B54" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="56" font-weight="700" letter-spacing="-0.03em">Codex</text>
+  </g>
+
+  <g>
+    <path d="M754 532H846" stroke="#3D3B54" stroke-opacity="0.35" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="800" cy="532" r="17" fill="#3D3B54"/>
+  </g>
+</svg>
