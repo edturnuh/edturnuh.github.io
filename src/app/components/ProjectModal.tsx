@@ -185,7 +185,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             </div>
           </section>
 
-          {project.liveDemo !== 'tetris' && (
+          {project.liveDemo !== 'tetris' && project.metrics.length > 0 && (
             <div className="mt-4 grid grid-cols-3 gap-2 md:mt-5 md:gap-3">
               {project.metrics.map((metric) => (
                 <div key={metric.label} className="rounded-lg border border-neutral-200 bg-white px-3 py-3 md:rounded-xl md:p-4">

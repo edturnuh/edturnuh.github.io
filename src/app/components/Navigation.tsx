@@ -62,7 +62,14 @@ export function Navigation() {
     <>
       <nav className="sticky top-0 z-40 border-b border-neutral-200 bg-[#fcfcfa]/95 backdrop-blur" role="navigation" aria-label="Main navigation">
         <div className="max-w-[1120px] mx-auto px-6 md:px-12 py-5 flex items-center justify-between gap-6">
-          <a href="#main-content" className="text-[15px] font-medium tracking-[0.01em] text-neutral-950">
+          <a
+            href="#top"
+            className="text-[15px] font-medium tracking-[0.01em] text-neutral-950"
+            onClick={(event) => {
+              event.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
             Edward Turner
           </a>
 

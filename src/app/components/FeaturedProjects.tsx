@@ -95,6 +95,18 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     I managed full-stack development and all CRO work which, in conjunction with our ad agency, resulted in 4x ROAS. Also secured $600k+ via Kickstarter and was featured as <a href="https://www.youtube.com/watch?v=i_kxgC6oLZE" target="_blank" rel="noopener noreferrer">Project of the Day</a> twice.`,
   },
   {
+    client: 'RSPCA website volunteering',
+    subtitle: '2026',
+    result: 'RSPCA',
+    cardSupportingText: 'Regular campaign support',
+    description: '',
+    metrics: [],
+    tags: ['Volunteer', 'Campaign support', 'Website management'],
+    detailedDescription: `I provide ongoing volunteer website support to <a href="https://rspca-suffolkcentral.org.uk/" target="_blank" rel="noopener noreferrer">RSPCA Suffolk Central</a>, helping with campaigns, streamlining web ops and general website management where needed. 
+    
+    Case study coming soon.`,
+  },
+  {
     client: 'Building a portfolio with AI',
     subtitle: '2026',
     cardSupportingText: '10x faster dev',
@@ -112,10 +124,10 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     The result? This site! It's a custom, performant website built in 2 days. The web development portion of that time was a tiny fraction. Development at this speed is mind-blowing, and in my opinion, the output quality is higher because I felt so free to explore design, writing and development on the fly.`,
   },
   {
-    client: 'Game of Tetris? 🕹️',
+    client: 'Tetris? 🕹️',
     subtitle: '2026',
     result: 'For you',
-    cardSupportingText: 'AI project made in 4m:29s',
+    cardSupportingText: 'AI-built launched a game in 4m:29s',
     description: '',
     metrics: [
       { label: 'Board', value: '10×20' },
