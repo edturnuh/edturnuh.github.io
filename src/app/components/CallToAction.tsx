@@ -20,7 +20,7 @@ export function CallToAction() {
                 Open to new roles in website management
               </h2>
               <p className="body-copy mt-5 text-neutral-700">
-                I'm keen to connect with great people, projects and organisations – including pro bono. If you think I could add value, do get in touch :)
+                I'm keen to connect with great people, projects and organisations (including on pro bono basis). If you think I could add value, do get in touch.
               </p>
             </div>
 
