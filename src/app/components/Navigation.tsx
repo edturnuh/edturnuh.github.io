@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ContactModal } from './ContactModal';
 
 const navItems = [
@@ -9,6 +9,54 @@ const navItems = [
 
 export function Navigation() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState('');
+
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => ({
+        href: item.href,
+        element: document.querySelector(item.href) as HTMLElement | null,
+      }))
+      .filter((section): section is { href: string; element: HTMLElement } => section.element !== null);
+
+    const contactSection = document.querySelector('#contact') as HTMLElement | null;
+
+    if (sections.length === 0) return;
+
+    const updateActiveSection = () => {
+      const scrollY = window.scrollY;
+      const activationLine = scrollY + 240;
+
+      if (activationLine < sections[0].element.offsetTop) {
+        setActiveHref('');
+        return;
+      }
+
+      if (contactSection && activationLine >= contactSection.offsetTop) {
+        setActiveHref('');
+        return;
+      }
+
+      let nextActiveHref = '';
+
+      for (const section of sections) {
+        if (activationLine >= section.element.offsetTop) {
+          nextActiveHref = section.href;
+        }
+      }
+
+      setActiveHref(nextActiveHref);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, []);
 
   return (
     <>
@@ -20,7 +68,13 @@ export function Navigation() {
 
           <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} className="text-[14px] text-neutral-600 hover:text-neutral-950">
+              <a
+                key={item.href}
+                href={item.href}
+                className={`text-[14px] underline-offset-4 hover:text-neutral-950 ${
+                  activeHref === item.href ? 'text-neutral-950 underline' : 'text-neutral-600'
+                }`}
+              >
                 {item.label}
               </a>
             ))}

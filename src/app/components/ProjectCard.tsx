@@ -34,7 +34,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
         </span>
       </div>
 
-      <h3 className="mt-8 text-[28px] leading-[1.15] tracking-[-0.03em] text-neutral-950 md:text-[34px]">
+      <h3 className="mt-6 text-[28px] leading-[1.15] tracking-[-0.03em] text-neutral-950 md:mt-6 md:text-[32px]">
         {project.client}
       </h3>
 

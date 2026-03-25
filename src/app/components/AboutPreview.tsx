@@ -2,7 +2,7 @@ import profileImage from '../../assets/9df415058f0535f1d55f3e0d8992a67ce86b9f72.
 
 export function AboutPreview() {
   return (
-    <section id="about" className="py-16 md:py-20 border-t border-neutral-200">
+    <section id="about" className="scroll-mt-24 py-16 md:py-20 border-t border-neutral-200">
       <div className="grid gap-8 md:grid-cols-[120px_minmax(0,1fr)] md:gap-10">
         <div>
           <img
@@ -13,17 +13,14 @@ export function AboutPreview() {
         </div>
         <div className="max-w-3xl">
           <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 mb-5">
-            Welcome
+            About
           </p>
-          <h2 className="text-[32px] leading-[1.1] tracking-[-0.03em] text-neutral-950 md:text-[40px]">
-            About me
+          <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 md:text-[52px]">
+            Hi, I'm Ed Turner
           </h2>
-          <div className="mt-6 space-y-4 text-[17px] leading-[1.8] text-neutral-700">
-            <p>I’m a website product leader with 10+ years’ experience owning and scaling high-impact public platforms.</p>
-            <p>My background spans marketing and engineering, allowing me to operate across strategy, execution, and technical delivery.</p>
-            <p>I like to work fast. AI is making me much faster.
-
-</p>
+          <div className="mt-6 space-y-4 text-[18px] leading-[1.7] text-neutral-700 md:text-[20px]">
+            <p>I made my first website when I was 9 and I've been hooked ever since. After 10 years in growth marketing and digital acquisition, I'm now specialising in website management/product management for high-impact public platforms.</p>
+            <p>I like to work fast. AI is changing the game.</p>
           </div>
         </div>
       </div>

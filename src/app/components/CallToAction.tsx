@@ -6,32 +6,45 @@ export function CallToAction() {
 
   return (
     <>
-      <section id="contact" className="py-16 md:py-20 border-t border-neutral-200">
-        <div className="max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 md:p-8">
-          <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 mb-4">
-            Contact
-          </p>
-          <h2 className="text-[30px] md:text-[36px] leading-[1.1] tracking-[-0.03em] text-neutral-950">
-            Open to senior website product and public web roles
-          </h2>
-          <p className="mt-4 text-[17px] leading-[1.8] text-neutral-700">
-            If you’re hiring for a role spanning growth, execution, and technical delivery, I’d be happy to speak.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <button
-              onClick={() => setContactOpen(true)}
-              className="rounded-xl bg-neutral-950 px-5 py-3 text-[15px] text-white hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-400"
-            >
+      <section id="contact" className="scroll-mt-24 py-16 md:py-20 border-t border-neutral-200">
+        <div className="overflow-hidden rounded-[28px] border border-neutral-200 bg-white">
+          <div className="border-b border-neutral-200 px-6 py-4 md:px-8">
+            <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
               Contact
-            </button>
-            <a
-              href="https://www.linkedin.com/in/ed-turner/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border border-neutral-300 px-5 py-3 text-[15px] text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-400"
-            >
-              LinkedIn
-            </a>
+            </p>
+          </div>
+
+          <div className="grid gap-8 px-6 py-8 md:grid-cols-[minmax(0,1.5fr)_minmax(280px,0.9fr)] md:gap-10 md:px-8 md:py-10">
+            <div className="max-w-3xl">
+              <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 md:text-[52px]">
+                Open to new roles in website management
+              </h2>
+              <p className="mt-5 text-[18px] leading-[1.7] text-neutral-700 md:text-[20px]">
+                I'm keen to connect with great people, projects and organisations – including pro bono. If you think I could add value, do get in touch :)
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-200 bg-[#fafaf8] p-5 md:p-6">
+              <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
+                Next Step
+              </p>
+              <div className="mt-4 flex flex-col gap-3">
+                <button
+                  onClick={() => setContactOpen(true)}
+                  className="rounded-xl bg-neutral-950 px-5 py-3 text-[15px] text-white hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+                >
+                  Contact
+                </button>
+                <a
+                  href="https://www.linkedin.com/in/ed-turner/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-neutral-300 bg-white px-5 py-3 text-center text-[15px] text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 

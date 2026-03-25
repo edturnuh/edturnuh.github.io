@@ -1,26 +1,35 @@
 const notes = [
   {
-    title: 'Notes',
-    summary: 'Short observations on building high-performing websites, CRO, and acquisition systems.',
+    title: 'The future of web',
+    summary: 'AI has made building a good web page accessible to almost anyone. At the same time, personal agents (e.g. Openclaw) now visit sites on our behalf anyway. Most sites will become agent-first (AEO/GEO) and/or replaced by corporate agents. Luxury brands may retain human-first websites to signal status.',
   },
   {
-    title: 'Topics',
-    summary: 'Likely themes: landing page experimentation, SEO operating models, and the mechanics behind revenue-critical public websites.',
+    title: 'Tools / Tech',
+    summary: 'I\'m sorry (not sorry) that I\'ll never hand-code again. I\'m absolutely blown away by Codex, Figma and OpenClaw. Getting heavily into JS also. Also, who knew that adding the prompt "make it WCAG accessible" could keep AI so on track?',
   },
+  {
+    title: 'Website management',
+    summary: 'Building a \'good\' website just isn\'t difficult anymore. The value is in the system that iterates and delivers outcomes. I believe product managers and ICs will merge.',
+  },
+  {
+    title: 'Collabs',
+    summary: 'AI-driven development is the easy bit now. If you need a hand to build something cool – let alone making it successful – I’d love to connect. Pro bono work welcome :)',
+  }
+  
 ];
 
 export function LatestNotes() {
   return (
-    <section id="notes" className="py-16 md:py-20 border-t border-neutral-200">
+    <section id="notes" className="scroll-mt-24 py-16 md:py-20 border-t border-neutral-200">
       <div className="max-w-3xl">
         <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 mb-5">
-          Notes
+          Opinion
         </p>
-        <h2 className="text-[32px] leading-[1.1] tracking-[-0.03em] text-neutral-950 md:text-[40px]">
-          Running websites in the age of AI
+        <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 md:text-[52px]">
+          Notes on AI
         </h2>
         <p className="mt-5 text-[17px] leading-[1.8] text-neutral-700">
-          Short observations on building high-performing websites, CRO, and acquisition systems.
+          
         </p>
       </div>
 
