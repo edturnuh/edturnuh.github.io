@@ -107,9 +107,10 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             <h3 className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
               Overview
             </h3>
-            <p className="mt-4 whitespace-pre-line text-[15px] leading-[1.8] text-neutral-700">
-              {project.detailedDescription}
-            </p>
+            <div
+              className="mt-4 whitespace-pre-line text-[15px] leading-[1.8] text-neutral-700 [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-neutral-950"
+              dangerouslySetInnerHTML={{ __html: project.detailedDescription }}
+            />
           </section>
 
           {project.liveDemo !== 'tetris' && (
@@ -119,7 +120,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                   <div className="text-[24px] leading-none font-semibold tracking-[-0.03em] text-neutral-950 md:text-[28px]">
                     {metric.value}
                   </div>
-                  <div className="mt-1.5 text-[10px] leading-[1.35] uppercase tracking-[0.08em] text-neutral-500 md:mt-2 md:text-[13px] md:tracking-[0.12em]">
+                  <div className="mt-2 font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
                     {metric.label}
                   </div>
                 </div>
@@ -141,7 +142,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
               {project.deepDive.stat && (
                 <div className="mt-5 rounded-lg border border-neutral-200 bg-[#fafaf8] px-4 py-3">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-neutral-500">
+                  <div className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
                     {project.deepDive.stat.label}
                   </div>
                   <div className="mt-2 text-[26px] leading-none font-semibold tracking-[-0.03em] text-neutral-950">

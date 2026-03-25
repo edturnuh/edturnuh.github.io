@@ -73,7 +73,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
     deepDive: {
       title: '\'Transition theme\' tech strategy',
       description: 'To quickly integrate the new visual brand identity across our 400-page site, I deprioritized ~380 low-traffic pages (only 20% of site visits). For those pages, we deployed a "transition theme", overhauling global elements/CSS, matching header nav/footer, tweaking fonts/sizes/colors/borders, plus rules to hide old assets. Routing HTML through the new theme resulted in an instant new look, delaying full redesign/rewrite til post-launch. Pre-launch: we made occasional HTML tweaks. Post-launch: Reviewed all again and fixed urgents immediately. This really sped up the launch of the new site– only 4 months start to finish.',
-      stat: { label: 'Rapid rebuild', value: '4-month' },
+      stat: { label: 'Month rebuild', value: '4' },
     },
   },
   {
@@ -88,7 +88,9 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
       
     ],
     tags: ['E-commerce', 'CRO', 'SEO', 'User acquisition'],
-    detailedDescription: 'As founding marketer lead at TAUR Technologies, I scaled the e-commerce site from scratch for the world\'s first premium electric scooter brand. Achieving $100k/month worth of pre-orders during its peak – and $2m worth of pre-orders overall. I managed full-stack development, A/B testing (which is conjunction our ad agency drove 4x ROAS), and a unique \'Virtual Showroom\' feature to assist with D2C and help position TAUR as a premium product. Also secured $600k+ via Kickstarter and was featured as \'Project of the Day\' twice.',
+    detailedDescription: `As founding marketer lead at TAUR Technologies, I scaled the e-commerce site from scratch for the world's first premium electric scooter brand. Achieving $100k/month worth of pre-orders during its peak – and $2m worth of pre-orders overall. 
+    
+    I managed full-stack development and all CRO work– which in conjunction with our ad agency drove 4x ROAS. Also secured $600k+ via Kickstarter and was featured as <a href="https://www.youtube.com/watch?v=i_kxgC6oLZE" target="_blank" rel="noopener noreferrer">Project of the Day</a> twice.`,
   },
   {
     client: 'Building a portfolio with AI',
@@ -118,7 +120,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
       { label: 'Pieces', value: '7' },
       { label: 'Inputs', value: 'Keys + UI' },
     ],
-    tags: ['Frontend', 'Accessibility', 'Game Design', 'Interaction'],
+    tags: ['AI', 'Rapid prototyping', 'Accessibility'],
     liveDemo: 'tetris',
     detailedDescription: `I don't know if this project was 100x or 1000x faster than coding by hand, but does it matter? I produced a lightweight, responsive, keyboard-friendly, accessible, browser-based Tetris in 4 minutes 29 seconds. I left it unpolished, and it's amazing!`,
   },
