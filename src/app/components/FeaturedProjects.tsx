@@ -40,7 +40,7 @@ const projects: Project[] = [
     },
   },
   {
-    client: 'Rebuilding a bank website in 4 months',
+    client: 'Rebuilding a bank\'s website in 4 months',
     subtitle: '2025',
     result: 'Allica Bank',
     cardSupportingText: '+37% organic CVR',
@@ -73,7 +73,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
     },
   },
   {
-    client: 'Selling £100k/month on Shopify',
+    client: 'Scaling to £100k/month on Shopify',
     subtitle: '2022',
     result: 'TAUR',
     cardSupportingText: '4x ROAS',
@@ -102,7 +102,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
     detailedDescription: `I wanted a portfolio that showcased real work without spending weeks coding from scratch. Figma let me design pixel-perfect layouts with component variants, auto-layout, and a proper design system. Claude took those designs and generated production-ready React code with sticky scroll effects, modals, accessibility features, and responsive layouts. The result? A polished, performant site built in a fraction of the time traditional development would take—proof that AI can supercharge the entire design-to-code workflow.`,
   },
   {
-    client: 'Play Tetris 🕹️',
+    client: 'Game of Tetris? 🕹️',
     subtitle: '2026',
     result: 'For you',
     cardSupportingText: 'AI project made in 4m29s',
