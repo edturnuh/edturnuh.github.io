@@ -27,26 +27,23 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
     >
       <div className="flex items-center justify-between gap-4">
         <span className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
-          {project.subtitle}
+          {project.subtitle} | {project.result}
         </span>
-        <span className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
-          {project.result}
-        </span>
+        <div className="flex items-center gap-3">
+          <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-neutral-300 bg-neutral-50 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-neutral-700">
+            Open
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </span>
+        </div>
       </div>
 
       <h3 className="mt-6 text-[28px] leading-[1.15] tracking-[-0.03em] text-neutral-950 md:mt-6 md:text-[32px]">
         {project.client}
       </h3>
 
-      <div className="mt-4 flex items-end justify-between gap-4">
-        <p className="body-copy flex-1 text-neutral-700">
-          {project.cardSupportingText}
-        </p>
-        <span className="inline-flex shrink-0 items-center gap-1 rounded-full border border-neutral-300 bg-neutral-50 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-neutral-700">
-          Open
-          <ArrowUpRight size={14} aria-hidden="true" />
-        </span>
-      </div>
+      <p className="body-copy mt-4 text-neutral-700">
+        {project.cardSupportingText}
+      </p>
     </article>
   );
 }
