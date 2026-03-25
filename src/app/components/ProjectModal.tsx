@@ -52,6 +52,79 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
   if (!isOpen) return null;
 
+  const renderRichText = (content: string) => {
+    const lines = content.split('\n');
+    const blocks: Array<
+      | { type: 'paragraph'; html: string }
+      | { type: 'list'; items: string[] }
+    > = [];
+
+    let paragraphBuffer: string[] = [];
+    let listBuffer: string[] = [];
+
+    const flushParagraph = () => {
+      if (paragraphBuffer.length > 0) {
+        blocks.push({ type: 'paragraph', html: paragraphBuffer.join('<br />') });
+        paragraphBuffer = [];
+      }
+    };
+
+    const flushList = () => {
+      if (listBuffer.length > 0) {
+        blocks.push({ type: 'list', items: listBuffer });
+        listBuffer = [];
+      }
+    };
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+
+      if (!trimmed) {
+        flushParagraph();
+        flushList();
+        continue;
+      }
+
+      if (trimmed.startsWith('• ')) {
+        flushParagraph();
+        listBuffer.push(trimmed.slice(2));
+        continue;
+      }
+
+      flushList();
+      paragraphBuffer.push(trimmed);
+    }
+
+    flushParagraph();
+    flushList();
+
+    return blocks.map((block, index) => {
+      if (block.type === 'list') {
+        return (
+          <ul key={index} className="space-y-1.5">
+            {block.items.map((item, itemIndex) => (
+              <li key={itemIndex} className="body-copy flex gap-3 text-neutral-700">
+                <span className="mt-[11px] h-px w-3 shrink-0 bg-neutral-500" aria-hidden="true" />
+                <span
+                  className="[&_a]:underline [&_a]:underline-offset-4 [&_strong]:font-semibold [&_strong]:text-neutral-950 hover:[&_a]:text-neutral-950"
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
+              </li>
+            ))}
+          </ul>
+        );
+      }
+
+      return (
+        <p
+          key={index}
+          className="[&_a]:underline [&_a]:underline-offset-4 [&_strong]:font-semibold [&_strong]:text-neutral-950 hover:[&_a]:text-neutral-950"
+          dangerouslySetInnerHTML={{ __html: block.html }}
+        />
+      );
+    });
+  };
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-start justify-center bg-black/35 p-3 pt-5 md:items-center md:p-4"
@@ -107,10 +180,9 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             <h3 className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
               Overview
             </h3>
-            <div
-              className="mt-4 whitespace-pre-line text-[15px] leading-[1.8] text-neutral-700 [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-neutral-950"
-              dangerouslySetInnerHTML={{ __html: project.detailedDescription }}
-            />
+            <div className="mt-4 space-y-4 text-[15px] leading-[1.8] text-neutral-700">
+              {renderRichText(project.detailedDescription)}
+            </div>
           </section>
 
           {project.liveDemo !== 'tetris' && (
@@ -136,9 +208,9 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
               <h4 className="mt-3 text-[24px] leading-[1.2] tracking-[-0.02em] text-neutral-950">
                 {project.deepDive.title}
               </h4>
-              <p className="mt-3 whitespace-pre-line text-[15px] leading-[1.8] text-neutral-700">
-                {project.deepDive.description}
-              </p>
+              <div className="mt-3 space-y-4 text-[15px] leading-[1.8] text-neutral-700">
+                {renderRichText(project.deepDive.description)}
+              </div>
 
               {project.deepDive.stat && (
                 <div className="mt-5 rounded-lg border border-neutral-200 bg-[#fafaf8] px-4 py-3">

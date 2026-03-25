@@ -60,12 +60,12 @@ const projects: Project[] = [
     tags: ['Brand', 'CRO', 'Ops', 'WCAG', 'SEO'],
     detailedDescription: `The primary goal was to integrate a new visual brand identity into our 400-page site. We took the opportunity to hit 6 additional objectives:
 
-• Migrate to latest HubSpot CMS → ✅
-• Reshape commercial offering around flagship product → organic conversion rate up 37%; sustained increase in lead volume 📈
-• Accelerate updates/maintenance via automation → Ops now 10–20x faster 🚀
-• Achieve full WCAG accessibility → Issues reduced from ~30 to ~3 per page 💙
-• Conduct full on-page technical SEO audit → ✅
-• Secure full compliance/legal approval → ✅
+• Migrate to latest HubSpot CMS → <strong>Done</strong>
+• Reshape commercial offering around flagship product → <strong>organic conversion rate up 37%; sustained increase in lead volume</strong>
+• Accelerate updates/maintenance via automation → <strong>Ops now 10–20x faster</strong>
+• Achieve full WCAG accessibility → <strong>Issues reduced from ~30 to ~3 per page</strong>
+• Conduct full on-page technical SEO audit → <strong>Done</strong>
+• Secure full compliance/legal approval → <strong>Done</strong>
 
 The strategy to launch in only 4 months revolved around a technical hack. We would prioritize rebuilding 21 high-traffic pages (accounting for ~80% site visits) and apply a 'transition theme' to all other pages (approx ~380) as a short-term fix. This theme would make them instantly look like the new brand (details below). 
 
@@ -124,7 +124,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     ],
     tags: ['AI', 'Rapid prototyping', 'Accessibility'],
     liveDemo: 'tetris',
-    detailedDescription: `I don't know if this project was 100x or 1000x faster than coding by hand. Does it matter? I produced a lightweight, responsive, keyboard-friendly, accessible, browser-based Tetris in 4 minutes 29 seconds. I left it unpolished.`,
+    detailedDescription: `I don't know if this project was 100x or 1000x faster than coding by hand. Does it matter? I produced a lightweight, responsive, keyboard-friendly, accessible, browser-based Tetris in 4 minutes 29 seconds. I love it so much I left it unpolished.`,
   },
 ];
 

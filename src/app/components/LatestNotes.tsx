@@ -29,7 +29,7 @@ export function LatestNotes() {
           Notes on AI
         </h2>
         <p className="body-copy mt-5 text-neutral-700">
-          
+          Nothing will be the same again 🙃
         </p>
       </div>
 
