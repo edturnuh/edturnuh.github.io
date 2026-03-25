@@ -89,7 +89,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             </div>
           )}
 
-          {project.liveDemo === 'tetris' ? (
+          {project.liveDemo === 'tetris' && (
             <section
               aria-labelledby="case-study-title"
               className="overflow-hidden rounded-xl border border-neutral-200 bg-white"
@@ -101,8 +101,19 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                 <TetrisGame />
               </div>
             </section>
-          ) : (
-            <div className="mt-6 grid grid-cols-3 gap-2 md:mt-8 md:gap-3">
+          )}
+
+          <section className={`rounded-xl border border-neutral-200 bg-white p-5 md:p-6 ${project.liveDemo === 'tetris' ? 'mt-5 md:mt-8' : 'mt-6 md:mt-8'}`}>
+            <h3 className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
+              Overview
+            </h3>
+            <p className="mt-4 whitespace-pre-line text-[15px] leading-[1.8] text-neutral-700">
+              {project.detailedDescription}
+            </p>
+          </section>
+
+          {project.liveDemo !== 'tetris' && (
+            <div className="mt-4 grid grid-cols-3 gap-2 md:mt-5 md:gap-3">
               {project.metrics.map((metric) => (
                 <div key={metric.label} className="rounded-lg border border-neutral-200 bg-white px-3 py-3 md:rounded-xl md:p-4">
                   <div className="text-[24px] leading-none font-semibold tracking-[-0.03em] text-neutral-950 md:text-[28px]">
@@ -115,15 +126,6 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
               ))}
             </div>
           )}
-
-          <section className="mt-5 rounded-xl border border-neutral-200 bg-white p-5 md:mt-8 md:p-6">
-            <h3 className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
-              Overview
-            </h3>
-            <p className="mt-4 whitespace-pre-line text-[15px] leading-[1.8] text-neutral-700">
-              {project.detailedDescription}
-            </p>
-          </section>
 
           {project.deepDive && (
             <section className="mt-4 rounded-xl border border-neutral-200 bg-white p-5 md:p-6">
