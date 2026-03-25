@@ -27,7 +27,7 @@ const projects: Project[] = [
     cardSupportingText: '+55% CVR while scaling',
     description: 'Complete overhaul of the signup and onboarding experience for a B2B SaaS platform.',
     metrics: [
-      { label: 'Conversion Rate', value: '55%+' },
+      { label: 'CVR', value: '55%+' },
       { label: 'More leads/yr', value: '~7k' },
       { label: 'Growth', value: '5x' },
     ],
@@ -54,7 +54,7 @@ const projects: Project[] = [
 
     metrics: [
       { label: 'Organic CVR uplift', value: '37%' },
-      { label: 'Faster operations', value: '10x' },
+      { label: 'Faster ops', value: '10x' },
       { label: 'WCAG issues', value: '-90%' },
     ],
     tags: ['Brand', 'CRO', 'Ops', 'WCAG', 'SEO'],
