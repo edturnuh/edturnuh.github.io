@@ -29,7 +29,7 @@ export function LatestNotes() {
           Notes on AI
         </h2>
         <p className="body-copy mt-5 text-neutral-700">
-          <strong>25th March, 2026: </strong><br class="mobile-break-only" />Nothing will be the same again 🤯
+          <strong>24th March, 2026: </strong><br class="mobile-break-only" />Nothing will be the same again 🤯
         </p>
       </div>
 
