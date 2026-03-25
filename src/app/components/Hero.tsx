@@ -14,13 +14,13 @@ export function Hero() {
         <h1 className="max-w-4xl text-[42px] leading-[1.02] font-semibold tracking-[-0.04em] text-neutral-950 sm:text-[56px] md:text-[72px]">
           I run revenue-critical websites for high-growth companies
         </h1>
-        <p className="max-w-3xl mt-6 text-[18px] leading-[1.7] text-neutral-700 md:text-[20px]">
-          Currently website manager at Allica Bank – generating 10,000+ high-value B2B leads annually and supporting rapid growth. Allica is the fastest growing firm in the UK (FT, 2025), now valued at $1.2bn (2026).
+        <p className="body-copy max-w-3xl mt-6 text-neutral-700">
+          Currently website manager at Allica Bank — generating 10,000+ high-value B2B leads annually and supporting rapid growth. Allica is the fastest growing firm in the UK (FT, 2025), now valued at $1.2bn (Series D, 2026).
         </p>
-        <ul className="mt-4 space-y-2">
+        <ul className="mt-4 space-y-1.5">
           {credibilityPoints.map((point) => (
-            <li key={point} className="flex gap-3 text-[18px] leading-[1.7] text-neutral-700 md:text-[20px]">
-              <span className="mt-[14px] h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500" aria-hidden="true" />
+            <li key={point} className="body-copy flex gap-3 text-neutral-700">
+              <span className="mt-[11px] h-px w-3 shrink-0 bg-neutral-500" aria-hidden="true" />
               {point}
             </li>
           ))}

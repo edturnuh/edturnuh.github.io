@@ -19,7 +19,7 @@ export function CallToAction() {
               <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 md:text-[52px]">
                 Open to new roles in website management
               </h2>
-              <p className="mt-5 text-[18px] leading-[1.7] text-neutral-700 md:text-[20px]">
+              <p className="body-copy mt-5 text-neutral-700">
                 I'm keen to connect with great people, projects and organisations – including pro bono. If you think I could add value, do get in touch :)
               </p>
             </div>

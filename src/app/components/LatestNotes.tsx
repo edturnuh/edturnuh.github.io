@@ -28,7 +28,7 @@ export function LatestNotes() {
         <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 md:text-[52px]">
           Notes on AI
         </h2>
-        <p className="mt-5 text-[17px] leading-[1.8] text-neutral-700">
+        <p className="body-copy mt-5 text-neutral-700">
           
         </p>
       </div>

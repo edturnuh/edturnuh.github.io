@@ -21,10 +21,10 @@ type Project = {
 
 const projects: Project[] = [
   {
-    client: 'Supporting £2bn of growth with CRO',
+    client: 'Supporting £2bn of growth through CRO',
     subtitle: '2026',
     result: 'Allica Bank',
-    cardSupportingText: '+55% CVR uplift while scaling',
+    cardSupportingText: '+55% CVR while scaling',
     description: 'Complete overhaul of the signup and onboarding experience for a B2B SaaS platform.',
     metrics: [
       { label: 'Conversion Rate', value: '55%+' },
@@ -132,7 +132,7 @@ export function FeaturedProjects() {
             <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 md:text-[52px]">
               Selected work
             </h2>
-            <p className="mt-5 text-[18px] leading-[1.7] text-neutral-700 md:text-[20px]">
+            <p className="body-copy mt-5 text-neutral-700">
               I've just started documenting work in this portfolio; major commercial projects as well as personal stuff.
             </p>
           </div>

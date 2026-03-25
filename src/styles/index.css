@@ -29,3 +29,8 @@ html {
   clip: auto;
   white-space: normal;
 }
+
+.body-copy {
+  font-size: 15px;
+  line-height: 1.7;
+}
