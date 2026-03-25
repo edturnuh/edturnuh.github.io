@@ -19,7 +19,7 @@ export function AboutPreview() {
             Hi, I'm Ed
           </h2>
           <div className="body-copy mt-6 space-y-4 text-neutral-700">
-            <p>I made my first website when I was 9 and I've been hooked ever since. After 10 years in growth marketing and digital acquisition, I'm now specialising in website management/product management for high-impact public platforms.</p>
+            <p>I made my first website when I was 9 and I've been hooked ever since. After 10 years in growth marketing and digital acquisition, I'm now specialising in website management / product management for high-impact public platforms.</p>
             <p>I like to work fast. AI is changing the game.</p>
           </div>
         </div>

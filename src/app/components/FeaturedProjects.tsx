@@ -32,14 +32,16 @@ const projects: Project[] = [
       { label: 'Growth', value: '5x' },
     ],
     tags: ['Analytics', 'CRO', 'XFN Leadership'],
-    detailedDescription: `The goal was to improve conversion rates while scaling digital acquisition (our largest channel) aggressively. This was ultimately in aid of driving new account balance growth in Allica's flagship product – the business current account. 
+    detailedDescription: `The goal was to improve conversion rates while scaling digital acquisition (our largest channel) aggressively. This was ultimately in aid of driving new account balance growth for Allica's flagship product – our business current account. 
     
-    I led testing of new UIs, conversion flows and trust signals; segmented heavily; and helped unlock major scale (e.g. £20m/month in balances from a single channel). Conversion rates increased by ~55%, which kept CAC from spiralling, helping fuel 5x balance growth in under 2 years to over £2bn today. 
+    I led testing of new UIs, conversion flows and trust signals; segmented heavily; and helped unlock major scale (e.g. £20m/month in balances from a single channel). All in, conversion rates increased by ~55%. This helped keep CAC under control, allowed us to continue scaling lead acquisition, and ultimately helped fuel 5x balance growth to over £2bn in under 2 years. 
     
     Allica was ranked fastest-growing company in UK, and the second fastest-growing in Europe (FT1000 2025). We also just raised a Series D round at $1.2bn valuation (2026), making Allica the UK's latest unicorn.`,
     deepDive: {
       title: 'Form Placement A/B Test',
-      description: `Users clicking the CTA were auto-scrolled to page bottom, disrupting their experience and our scroll-depth tracking. With 30–40% of high-intent traffic hitting the button, we embedded the form in a modal popup instead. Result: +18% form submissions, rolled out site-wide.`,
+      description: `Users clicking the CTA button were auto-scrolled to a lead gen form at the bottom of the page, interrupting their browsing experience (and our scroll-depth tracking reports). We knew 30–40% of high-intent traffic were clicking CTA buttons, so improving the experience was high priority. 
+      
+      So, we tested showing the form in a modal popup – overlaying the lead gen form on top of what the user was reading – allowing them to convert there or just click away and come back later. Result: +18% form submissions, rolled out site-wide.`,
       stat: { label: 'Form Submissions', value: '+18%' },
     },
   },
@@ -69,7 +71,7 @@ The strategy to launch in only 4 months revolved around a technical hack. We wou
 
 Why was speed so important? To avoid maintaining two websites; to avoid sapping the team's bandwidth in such a fast-paced setup; to enable return to a single site ASAP.
 
-Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned bank-critical tests. All passed within 30-min launch window.`,
+Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned launch-critical tests. All passed within 30-min launch window.`,
     deepDive: {
       title: '\'Transition theme\' tech strategy',
       description: 'To quickly integrate the new visual brand identity across our 400-page site, I deprioritized ~380 low-traffic pages (only 20% of site visits). For those pages, we deployed a "transition theme", overhauling global elements/CSS, matching header nav/footer, tweaking fonts/sizes/colors/borders, plus rules to hide old assets. Routing HTML through the new theme resulted in an instant new look, delaying full redesign/rewrite til post-launch. Pre-launch: we made occasional HTML tweaks. Post-launch: Reviewed all again and fixed urgents immediately. This really sped up the launch of the new site– only 4 months start to finish.',
@@ -77,7 +79,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
     },
   },
   {
-    client: 'Scaling to £100k/month on Shopify',
+    client: '$0 to $100k/month on Shopify',
     subtitle: '2022',
     result: 'TAUR',
     cardSupportingText: '4x ROAS',
@@ -88,9 +90,9 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
       
     ],
     tags: ['E-commerce', 'CRO', 'SEO', 'User acquisition'],
-    detailedDescription: `As founding marketer lead at TAUR Technologies, I scaled the e-commerce site from scratch for the world's first premium electric scooter brand. Achieving $100k/month worth of pre-orders during its peak – and $2m worth of pre-orders overall. 
+    detailedDescription: `As founding marketer lead at TAUR Technologies, I launched and scaled the e-commerce site for the world's first premium electric scooter brand. It ran at ~$100k/month worth of pre-orders during its peak, and ultimately drove $2m worth of pre-orders. 
     
-    I managed full-stack development and all CRO work– which in conjunction with our ad agency drove 4x ROAS. Also secured $600k+ via Kickstarter and was featured as <a href="https://www.youtube.com/watch?v=i_kxgC6oLZE" target="_blank" rel="noopener noreferrer">Project of the Day</a> twice.`,
+    I managed full-stack development and all CRO work which, in conjunction with our ad agency, resulted in 4x ROAS. Also secured $600k+ via Kickstarter and was featured as <a href="https://www.youtube.com/watch?v=i_kxgC6oLZE" target="_blank" rel="noopener noreferrer">Project of the Day</a> twice.`,
   },
   {
     client: 'Building a portfolio with AI',
@@ -105,9 +107,9 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
       
     ],
     tags: ['AI', 'Rapid Prototyping'],
-    detailedDescription: `I wanted a portfolio that showcased real work without spending weeks coding on some boilerplate template. Designed in ChatGPT and Figma, then built via Codex as a React + TypeScript + Vite site with Tailwind CSS and custom components. WCAG compliant. And hosted free on Github. 
+    detailedDescription: `I wanted a portfolio site that showcased real work without spending weeks coding on some boilerplate template. So, I outlined the site in ChatGPT and Figma, then built it via Codex as a React + TypeScript + Vite site with Tailwind CSS and custom components. WCAG compliant. Hosted on Github. 
     
-    The result? A custom, performant site built in 2 days– the web development component of which took a tiny fraction. Development at that speed is mind-blowing. In my opinion, the output quality ended up higher because I felt so free to explore design, writing and development on the fly.`,
+    The result? This site! It's a custom, performant website built in 2 days. The web development portion of that time was a tiny fraction. Development at this speed is mind-blowing, and in my opinion, the output quality is higher because I felt so free to explore design, writing and development on the fly.`,
   },
   {
     client: 'Game of Tetris? 🕹️',
@@ -122,7 +124,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
     ],
     tags: ['AI', 'Rapid prototyping', 'Accessibility'],
     liveDemo: 'tetris',
-    detailedDescription: `I don't know if this project was 100x or 1000x faster than coding by hand, but does it matter? I produced a lightweight, responsive, keyboard-friendly, accessible, browser-based Tetris in 4 minutes 29 seconds. I left it unpolished, and it's amazing!`,
+    detailedDescription: `I don't know if this project was 100x or 1000x faster than coding by hand. Does it matter? I produced a lightweight, responsive, keyboard-friendly, accessible, browser-based Tetris in 4 minutes 29 seconds. I left it unpolished.`,
   },
 ];
 
