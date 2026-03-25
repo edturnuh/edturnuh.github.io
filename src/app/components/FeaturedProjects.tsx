@@ -27,7 +27,7 @@ const projects: Project[] = [
     cardSupportingText: '+55% CVR while scaling',
     description: 'Complete overhaul of the signup and onboarding experience for a B2B SaaS platform.',
     metrics: [
-      { label: 'CVR', value: '55%+' },
+      { label: 'CVR uplift', value: '55%' },
       { label: 'More leads/yr', value: '~7k' },
       { label: 'Growth', value: '5x' },
     ],
@@ -85,7 +85,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     cardSupportingText: '4x ROAS',
     description: 'Built an AI tool that generates marketing copy variations for A/B testing.',
     metrics: [
-      { label: 'Monthly pre-orders', value: '£100k' },
+      { label: 'Monthly', value: '£100k' },
       { label: 'ROAS', value: '4x' },
       
     ],
@@ -101,7 +101,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     cardSupportingText: 'Regular campaign support',
     description: '',
     metrics: [],
-    tags: ['Volunteer', 'Campaign support', 'Website management'],
+    tags: ['AI', 'Wordpress'],
     detailedDescription: `I provide ongoing volunteer website support to <a href="https://rspca-suffolkcentral.org.uk/" target="_blank" rel="noopener noreferrer">RSPCA Suffolk Central</a>, helping with campaigns, streamlining web ops and general website management where needed. 
     
     Case study coming soon.`,
