@@ -107,6 +107,21 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     Case study coming soon.`,
   },
   {
+    client: 'Game of Tetris? 🕹️',
+    subtitle: '2026',
+    result: 'For you',
+    cardSupportingText: 'Try a game I launched in 4m:29s',
+    description: '',
+    metrics: [
+      { label: 'Board', value: '10×20' },
+      { label: 'Pieces', value: '7' },
+      { label: 'Inputs', value: 'Keys + UI' },
+    ],
+    tags: ['AI', 'Rapid prototyping', 'Accessibility'],
+    liveDemo: 'tetris',
+    detailedDescription: `I don't know if this project was 100x or 1000x faster than coding by hand. Does it matter? I produced a lightweight, responsive, keyboard-friendly, accessible, browser-based Tetris in 4 minutes 29 seconds. I love it so much I left it unpolished.`,
+  },
+  {
     client: 'Building a portfolio with AI',
     subtitle: '2026',
     cardSupportingText: '10x faster dev',
@@ -122,21 +137,6 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     detailedDescription: `I wanted a portfolio site that showcased real work without spending weeks coding on some boilerplate template. So, I outlined the site in ChatGPT and Figma, then built it via Codex as a React + TypeScript + Vite site with Tailwind CSS and custom components. WCAG compliant. Hosted on Github. 
     
     The result? This site! It's a custom, performant website built in 2 days. The web development portion of that time was a tiny fraction. Development at this speed is mind-blowing, and in my opinion, the output quality is higher because I felt so free to explore design, writing and development on the fly.`,
-  },
-  {
-    client: 'Tetris? 🕹️',
-    subtitle: '2026',
-    result: 'For you',
-    cardSupportingText: 'AI-built launched a game in 4m:29s',
-    description: '',
-    metrics: [
-      { label: 'Board', value: '10×20' },
-      { label: 'Pieces', value: '7' },
-      { label: 'Inputs', value: 'Keys + UI' },
-    ],
-    tags: ['AI', 'Rapid prototyping', 'Accessibility'],
-    liveDemo: 'tetris',
-    detailedDescription: `I don't know if this project was 100x or 1000x faster than coding by hand. Does it matter? I produced a lightweight, responsive, keyboard-friendly, accessible, browser-based Tetris in 4 minutes 29 seconds. I love it so much I left it unpolished.`,
   },
 ];
 
