@@ -1,56 +1,31 @@
-import { motion, AnimatePresence } from 'motion/react';
-import { useState, useEffect } from 'react';
-import { ROTATING_TEXT, HERO_ANIMATION } from '../config/hero';
+const credibilityPoints = [
+  '10 years in marketing',
+  'Full-stack web developer',
+  '...using AI for both 🚀',
+];
 
 export function Hero() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % ROTATING_TEXT.length);
-    }, HERO_ANIMATION.displayDuration + HERO_ANIMATION.transitionDuration);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="pt-[30px] md:pt-[97px] 2xl:pt-[130px] pb-[18px] md:pb-[15px] 2xl:pb-[65px]">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="max-w-[1120px]"
-      >
-        <h1 className="mb-6 text-[34px] leading-[1.02] font-medium tracking-[-0.05em] text-[#F5F3EF] sm:text-[46px] md:text-[68px] lg:text-[82px] 2xl:text-[96px]">
-          <span>Website product manager helping brilliant brands </span>
-          <span className="relative inline-flex min-h-[1.1em] min-w-[7.5ch] align-top text-[#F5F3EF]">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={currentIndex}
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -28 }}
-                transition={{ duration: HERO_ANIMATION.transitionDuration / 1000, ease: 'easeInOut' }}
-                className="absolute inset-0 whitespace-normal break-words"
-              >
-                {ROTATING_TEXT[currentIndex]}
-              </motion.span>
-            </AnimatePresence>
-            <span className="invisible whitespace-normal break-words">
-              optimise performance
-            </span>
-          </span>
+    <section className="pt-12 md:pt-20 pb-8 md:pb-10">
+      <div className="max-w-4xl">
+        <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 mb-6">
+          Website Product Leader
+        </p>
+        <h1 className="max-w-4xl text-[42px] leading-[1.02] font-semibold tracking-[-0.04em] text-neutral-950 sm:text-[56px] md:text-[72px]">
+          I run revenue-critical websites for high-growth companies
         </h1>
-      </motion.div>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
-        className="max-w-[630px] text-[16px] leading-[1.7] text-[#d4d4d4] md:pt-[5px] md:text-[17px]"
-      >
-        I combine deep technical expertise with a 10-year career in growth marketing. Currently at Allica Bank (Series D, 2026). I've just started documenting work on this portfolio :)
-      </motion.p>
+        <p className="max-w-3xl mt-6 text-[18px] leading-[1.7] text-neutral-700 md:text-[20px]">
+          Currently leading the public website at Allica Bank — generating 10,000+ high-value B2B leads annually and supporting rapid balance growth. Allica is the fastest growing firm in the UK (FT, 2025), valued at $1.2bn (2026).
+        </p>
+        <ul className="mt-4 space-y-2">
+          {credibilityPoints.map((point) => (
+            <li key={point} className="flex gap-3 text-[18px] leading-[1.7] text-neutral-700 md:text-[20px]">
+              <span className="mt-[14px] h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500" aria-hidden="true" />
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

@@ -1,46 +1,34 @@
 const notes = [
   {
-    title: 'Building fast: lessons from shipping 12 projects in 6 months',
-    summary: 'Why velocity beats perfection when you\'re learning what works.',
-    date: 'Feb 18, 2026',
+    title: 'Notes',
+    summary: 'Short observations on building high-performing websites, CRO, and acquisition systems.',
   },
   {
-    title: 'The growth experiment framework I use for every project',
-    summary: 'A simple system for hypothesis-driven product development.',
-    date: 'Feb 3, 2026',
-  },
-  {
-    title: 'Why I switched from designer to developer-marketer',
-    summary: 'On technical literacy and owning your product decisions.',
-    date: 'Jan 22, 2026',
+    title: 'Topics',
+    summary: 'Likely themes: landing page experimentation, SEO operating models, and the mechanics behind revenue-critical public websites.',
   },
 ];
 
 export function LatestNotes() {
   return (
-    <section id="notes" className="py-16 border-t border-neutral-800">
-      <div className="mb-12">
-        <h2 className="font-mono text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-neutral-400">
-          Latest Notes
+    <section id="notes" className="py-16 md:py-20 border-t border-neutral-200">
+      <div className="max-w-3xl">
+        <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 mb-5">
+          Notes
+        </p>
+        <h2 className="text-[32px] leading-[1.1] tracking-[-0.03em] text-neutral-950 md:text-[40px]">
+          Running websites in the age of AI
         </h2>
+        <p className="mt-5 text-[17px] leading-[1.8] text-neutral-700">
+          Short observations on building high-performing websites, CRO, and acquisition systems.
+        </p>
       </div>
-      <div className="space-y-8">
-        {notes.map((note, index) => (
-          <article key={index}>
-            <a
-              href="#"
-              className="block group hover:bg-white/5 -mx-6 px-6 md:-mx-12 md:px-12 py-4 rounded-lg transition-colors border border-transparent hover:border-white/10 focus:outline-none focus:border-blue-500 focus:bg-white/5"
-            >
-              <h3 className="text-[18px] text-[#F5F3EF] mb-2 group-hover:text-blue-400 transition-colors">
-                {note.title}
-              </h3>
-              <p className="text-[15px] text-neutral-400 mb-2 leading-[1.6]">
-                {note.summary}
-              </p>
-              <time className="font-mono text-[12px] text-neutral-400 uppercase tracking-wider" dateTime={note.date}>
-                {note.date}
-              </time>
-            </a>
+
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
+        {notes.map((note) => (
+          <article key={note.title} className="rounded-2xl border border-neutral-200 bg-white p-6">
+            <h3 className="text-[20px] leading-[1.3] text-neutral-950">{note.title}</h3>
+            <p className="mt-3 text-[15px] leading-[1.7] text-neutral-600">{note.summary}</p>
           </article>
         ))}
       </div>
