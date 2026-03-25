@@ -1,0 +1,68 @@
+<svg width="1600" height="960" viewBox="0 0 1600 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="960" fill="#090B0F"/>
+  <rect x="70" y="70" width="1460" height="820" rx="42" fill="url(#paint0_radial)"/>
+  <rect x="110" y="110" width="900" height="740" rx="32" fill="#11151D" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="1050" y="110" width="440" height="740" rx="32" fill="#121722" stroke="rgba(255,255,255,0.08)"/>
+  <g opacity="0.3">
+    <path d="M171 171H949" stroke="#202632"/>
+    <path d="M171 243H949" stroke="#202632"/>
+    <path d="M171 315H949" stroke="#202632"/>
+    <path d="M171 387H949" stroke="#202632"/>
+    <path d="M171 459H949" stroke="#202632"/>
+    <path d="M171 531H949" stroke="#202632"/>
+    <path d="M171 603H949" stroke="#202632"/>
+    <path d="M171 675H949" stroke="#202632"/>
+    <path d="M171 747H949" stroke="#202632"/>
+    <path d="M171 819H949" stroke="#202632"/>
+    <path d="M171 171V819" stroke="#202632"/>
+    <path d="M243 171V819" stroke="#202632"/>
+    <path d="M315 171V819" stroke="#202632"/>
+    <path d="M387 171V819" stroke="#202632"/>
+    <path d="M459 171V819" stroke="#202632"/>
+    <path d="M531 171V819" stroke="#202632"/>
+    <path d="M603 171V819" stroke="#202632"/>
+    <path d="M675 171V819" stroke="#202632"/>
+    <path d="M747 171V819" stroke="#202632"/>
+    <path d="M819 171V819" stroke="#202632"/>
+    <path d="M891 171V819" stroke="#202632"/>
+  </g>
+  <rect x="460" y="603" width="64" height="64" rx="12" fill="#C084FC"/>
+  <rect x="532" y="603" width="64" height="64" rx="12" fill="#C084FC"/>
+  <rect x="604" y="603" width="64" height="64" rx="12" fill="#C084FC"/>
+  <rect x="532" y="531" width="64" height="64" rx="12" fill="#C084FC"/>
+  <rect x="388" y="675" width="64" height="64" rx="12" fill="#38BDF8"/>
+  <rect x="460" y="675" width="64" height="64" rx="12" fill="#38BDF8"/>
+  <rect x="532" y="675" width="64" height="64" rx="12" fill="#38BDF8"/>
+  <rect x="604" y="675" width="64" height="64" rx="12" fill="#38BDF8"/>
+  <rect x="676" y="387" width="64" height="64" rx="12" fill="#FB923C"/>
+  <rect x="676" y="459" width="64" height="64" rx="12" fill="#FB923C"/>
+  <rect x="676" y="531" width="64" height="64" rx="12" fill="#FB923C"/>
+  <rect x="748" y="531" width="64" height="64" rx="12" fill="#FB923C"/>
+  <rect x="1120" y="166" width="110" height="110" rx="24" fill="#0C1018"/>
+  <rect x="1240" y="166" width="110" height="110" rx="24" fill="#0C1018"/>
+  <rect x="1360" y="166" width="110" height="110" rx="24" fill="#0C1018"/>
+  <text fill="#F5F3EF" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="0.22em">
+    <tspan x="1120" y="372">BROWSER TETRIS</tspan>
+  </text>
+  <text fill="rgba(245,243,239,0.62)" font-family="Arial, sans-serif" font-size="18" letter-spacing="0.24em">
+    <tspan x="1120" y="420">PLAYABLE CASE STUDY</tspan>
+  </text>
+  <text fill="#F5F3EF" font-family="Arial, sans-serif" font-size="18" letter-spacing="0.24em">
+    <tspan x="1120" y="510">SCORE</tspan>
+  </text>
+  <text fill="#F5F3EF" font-family="Arial, sans-serif" font-size="54" font-weight="700">
+    <tspan x="1120" y="572">1240</tspan>
+  </text>
+  <text fill="#F5F3EF" font-family="Arial, sans-serif" font-size="18" letter-spacing="0.24em">
+    <tspan x="1120" y="650">LINES</tspan>
+  </text>
+  <text fill="#F5F3EF" font-family="Arial, sans-serif" font-size="54" font-weight="700">
+    <tspan x="1120" y="712">08</tspan>
+  </text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 70) rotate(90) scale(820 1460)">
+      <stop stop-color="#202632"/>
+      <stop offset="1" stop-color="#090B0F"/>
+    </radialGradient>
+  </defs>
+</svg>

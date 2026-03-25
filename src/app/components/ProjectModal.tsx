@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { TetrisGame } from './TetrisGame';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -28,6 +29,7 @@ interface ProjectModalProps {
     tintColor: string;
     modalResult?: string;
     modalResultLabel?: string;
+    liveDemo?: 'tetris';
   };
 }
 
@@ -156,19 +158,24 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             </h2>
           </div>
 
-          {/* Hero Image — no border radius, with subtle tint overlay and result stat */}
+          {/* Hero media — image by default, or live playable demo when available */}
           <div className="relative mx-5 md:mx-8 overflow-hidden">
             <div className="aspect-[1.8/1] md:aspect-[2.25/1] 2xl:aspect-[1.8/1]">
-              <ImageWithFallback
-                src={project.image}
-                alt={`${project.client} – ${project.subtitle}`}
-                className="w-full h-full object-cover"
-              />
+              {project.liveDemo === 'tetris' ? (
+                <TetrisGame />
+              ) : (
+                <ImageWithFallback
+                  src={project.image}
+                  alt={`${project.client} – ${project.subtitle}`}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
-            {/* Dark gradient for stat legibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+            {project.liveDemo !== 'tetris' && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+            )}
             {/* Result stat overlay — bottom-right */}
-            {project.modalResult && (
+            {project.modalResult && project.liveDemo !== 'tetris' && (
               <div className="absolute bottom-4 right-4 md:bottom-5 md:right-6 2xl:bottom-6 text-right">
                 <div
                   className="text-[36px] md:text-[48px] font-bold leading-none"

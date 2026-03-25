@@ -4,6 +4,7 @@ import { ProjectModal } from './ProjectModal';
 import imgImage1 from "../../assets/e36e214886c9798d7ecd4e0bc01379d32f57587c.png";
 import imgImage2 from "../../assets/cb03a2b08a1d307250c5e359e10e28fa18685edd.png";
 import imgImage3 from "../../assets/f1aee0b8181b32715025f2bef3c3a6632d78683a.png";
+import tetrisThumbnail from "../../assets/tetris-thumbnail.svg";
 
 const projects = [
   {
@@ -133,6 +134,38 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned ban
       image: imgImage1,
       stat: { label: 'Time Saved', value: '90%+' },
     },
+  },
+  {
+    client: 'Built a browser Tetris people can actually play',
+    subtitle: '2026',
+    result: 'Personal Build',
+    cardBg: '#11151d',
+    titleColor: 'text-[#f5f3ef]',
+    labelColor: 'rgba(245,243,239,0.68)',
+    borderColor: 'border-[rgba(255,255,255,0.12)]',
+    glowColor: 'shadow-[0px_25px_50px_-12px_rgba(14,22,35,0.5)]',
+    statGradient: 'from-[#1d4ed8] to-[#38bdf8]',
+    tintColor: 'rgba(56,189,248,0.16)',
+    image: tetrisThumbnail,
+    description: 'Designed and built an accessible browser Tetris with a polished in-case-study playable demo.',
+    tags: ['Frontend', 'Accessibility', 'Game Design', 'Interaction'],
+    detailedDescription: `I wanted one project on this portfolio to feel immediately interactive rather than purely descriptive, so I built a browser-based Tetris and embedded it directly into the case study. The goal was not novelty for novelty's sake. It was to show product thinking, interface restraint, and engineering discipline in a format people can understand within seconds.
+
+The game is intentionally lightweight: no heavy libraries, no flashy effects that sacrifice responsiveness, and no awkward controls. It uses predictable state updates, keyboard support, button controls, and a clear visual hierarchy so it feels smooth to play and easy to understand the first time you open it.
+
+Just as importantly, the experience is accessible. Controls are available without a mouse, the UI exposes clear status information, contrast stays strong throughout, and the game sits inside the same portfolio modal pattern instead of opening an entirely different environment. That keeps the interaction focused while still giving visitors something memorable to engage with.`,
+    images: [tetrisThumbnail, tetrisThumbnail],
+    metrics: [
+      { label: 'Board', value: '10×20' },
+      { label: 'Pieces', value: '7' },
+      { label: 'Inputs', value: 'Keys + UI' },
+    ],
+    deepDive: {
+      title: 'Designing for responsiveness without visual noise',
+      description: `The challenge was making the game feel polished inside a case-study modal rather than like a hacked-in side project. I kept the rendering model simple, avoided scroll-linked effects, used clear spacing and contrast, and added direct controls alongside keyboard support. The result is a compact, self-contained experience that feels intentional instead of ornamental.`,
+      stat: { label: 'Dependency approach', value: 'No game lib' },
+    },
+    liveDemo: 'tetris' as const,
   },
 ];
 
