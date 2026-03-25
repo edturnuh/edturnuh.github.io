@@ -34,3 +34,13 @@ html {
   font-size: 15px;
   line-height: 1.7;
 }
+
+.mobile-break-only {
+  display: inline;
+}
+
+@media (min-width: 768px) {
+  .mobile-break-only {
+    display: none;
+  }
+}
