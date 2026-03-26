@@ -1,7 +1,7 @@
 const notes = [
   {
     title: 'The future of web',
-    summary: 'AI has made building a good web page accessible to almost anyone. At the same time, personal agents (e.g. Openclaw) now visit sites on our behalf anyway. Most sites will become agent-first (AEO/GEO) and/or replaced by corporate agents. Luxury brands may retain human-first websites to signal status.',
+    summary: 'AI has made building a good web page accessible to almost anyone. At the same time, personal agents (e.g. Openclaw) now visit sites on our behalf anyway. Most sites will become agent-first (AEO/GEO) and/or replaced by corporate agents. Luxury brands may retain human-first websites.',
   },
   {
     title: 'Tools / Tech',
