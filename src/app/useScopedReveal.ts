@@ -20,6 +20,7 @@ export function useScopedReveal(
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobileViewport = window.matchMedia('(max-width: 767px)').matches;
+    const revealSetupDelay = isMobileViewport && rootRef?.current ? 220 : 0;
 
     revealElements.forEach((element) => {
       const delay = element.dataset.revealDelay;
@@ -36,30 +37,37 @@ export function useScopedReveal(
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
+    let observer: IntersectionObserver | null = null;
 
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: isMobileViewport ? 0.24 : 0.18,
-        root: rootRef?.current ?? null,
-        rootMargin: '0px 0px -10% 0px',
-      }
-    );
+    const setupObserver = () => {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
 
-    revealElements.forEach((element) => {
-      observer.observe(element);
-    });
+            entry.target.classList.add('is-visible');
+            observer?.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: isMobileViewport ? 0.24 : 0.18,
+          root: rootRef?.current ?? null,
+          rootMargin: rootRef?.current ? '0px' : '0px 0px -10% 0px',
+        }
+      );
+
+      revealElements.forEach((element) => {
+        observer?.observe(element);
+      });
+    };
+
+    const setupTimeout = window.setTimeout(setupObserver, revealSetupDelay);
 
     return () => {
-      observer.disconnect();
+      window.clearTimeout(setupTimeout);
+      observer?.disconnect();
     };
   }, [isActive, rootRef, scopeRef]);
 }

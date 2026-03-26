@@ -34,29 +34,61 @@ export default function App() {
       }
     });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
+    const isLargeDesktopViewport = window.matchMedia(
+      '(min-width: 1600px) and (min-height: 900px)'
+    ).matches;
+    const heroAnimationDurationMs = 1090;
+    let observer: IntersectionObserver | null = null;
+
+    const setupRevealObserver = () => {
+      if (isLargeDesktopViewport) {
+        const preloadBoundary = window.innerHeight * 0.92;
+
+        revealElements.forEach((element) => {
+          const { top } = element.getBoundingClientRect();
+
+          if (top <= preloadBoundary) {
+            element.classList.add('is-visible');
           }
-
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
         });
-      },
-      {
-        threshold: isMobileViewport ? 0.24 : 0.18,
-        rootMargin: '0px 0px -10% 0px',
       }
-    );
 
-    revealElements.forEach((element) => {
-      observer.observe(element);
-    });
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add('is-visible');
+            observer?.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: isMobileViewport ? 0.24 : 0.18,
+          rootMargin: '0px 0px -10% 0px',
+        }
+      );
+
+      revealElements.forEach((element) => {
+        observer?.observe(element);
+      });
+    };
+
+    const revealSetupTimeout = isLargeDesktopViewport
+      ? window.setTimeout(setupRevealObserver, heroAnimationDurationMs)
+      : null;
+
+    if (!isLargeDesktopViewport) {
+      setupRevealObserver();
+    }
 
     return () => {
-      observer.disconnect();
+      if (revealSetupTimeout !== null) {
+        window.clearTimeout(revealSetupTimeout);
+      }
+
+      observer?.disconnect();
     };
   }, []);
 
