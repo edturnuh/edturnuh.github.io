@@ -19,6 +19,7 @@ export function useScopedReveal(
     }
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobileViewport = window.matchMedia('(max-width: 767px)').matches;
 
     revealElements.forEach((element) => {
       const delay = element.dataset.revealDelay;
@@ -47,7 +48,7 @@ export function useScopedReveal(
         });
       },
       {
-        threshold: 0.18,
+        threshold: isMobileViewport ? 0.24 : 0.18,
         root: rootRef?.current ?? null,
         rootMargin: '0px 0px -10% 0px',
       }

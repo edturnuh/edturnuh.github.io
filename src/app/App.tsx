@@ -17,6 +17,7 @@ export default function App() {
     }
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobileViewport = window.matchMedia('(max-width: 767px)').matches;
 
     if (prefersReducedMotion) {
       revealElements.forEach((element) => {
@@ -45,7 +46,7 @@ export default function App() {
         });
       },
       {
-        threshold: 0.18,
+        threshold: isMobileViewport ? 0.24 : 0.18,
         rootMargin: '0px 0px -10% 0px',
       }
     );
