@@ -85,7 +85,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     cardSupportingText: '4x ROAS',
     description: 'Built an AI tool that generates marketing copy variations for A/B testing.',
     metrics: [
-      { label: 'Monthly', value: '£100k' },
+      { label: 'Monthly', value: '$100k' },
       { label: 'ROAS', value: '4x' },
       
     ],
