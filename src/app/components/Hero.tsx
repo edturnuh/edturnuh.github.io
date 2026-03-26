@@ -15,7 +15,7 @@ export function Hero() {
           I run revenue-critical websites for high-growth companies
         </h1>
         <p className="body-copy max-w-3xl mt-6 text-neutral-700">
-          Currently website manager at Allica Bank; I oversee the acquisition platform for a $1.2bn fintech generating 10,000+ B2B leads annually– it's the fastest-growing firm in the UK (FT, 2025) and we just raised a Series-D (2026).
+          Currently website manager at Allica Bank; I oversee the acquisition platform for a $1.2bn fintech generating 10,000+ B2B leads annually– it's the fastest-growing firm in the UK (FT, 2025) and we just raised a Series-D (2026). My background is:
         </p>
         <ul className="mt-4 space-y-1.5">
           {credibilityPoints.map((point) => (
