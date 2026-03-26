@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { X, Copy, Check } from 'lucide-react';
+import { useScopedReveal } from '../useScopedReveal';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -12,6 +13,8 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const previousFocusRef = useRef<HTMLElement | null>(null);
   const [copied, setCopied] = useState(false);
   const email = 'edward_turner@hotmail.co.uk';
+
+  useScopedReveal(isOpen, modalRef);
 
   useEffect(() => {
     if (isOpen) {
@@ -90,15 +93,15 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     >
       <div
         ref={modalRef}
-        className="w-full max-w-md rounded-2xl border border-neutral-200 bg-[#fcfcfa] shadow-xl"
+        className="animate-fade-in w-full max-w-md rounded-2xl border border-neutral-200 bg-[#fcfcfa] shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
-          <span className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">Contact</span>
+          <span className="page-enter page-enter-delay-1 font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">Contact</span>
           <button
             ref={closeButtonRef}
             onClick={onClose}
-            className="rounded-lg p-1.5 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+            className="page-enter page-enter-delay-2 rounded-lg p-1.5 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-400"
             aria-label="Close contact dialog"
           >
             <X size={18} />
@@ -106,10 +109,20 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         </div>
 
         <div className="px-6 py-6">
-          <h2 id="contact-modal-title" className="text-[28px] leading-[1.1] tracking-[-0.03em] text-neutral-950">
+          <h2
+            id="contact-modal-title"
+            className="reveal-on-scroll text-[28px] leading-[1.1] tracking-[-0.03em] text-neutral-950"
+            data-reveal
+            data-reveal-delay={40}
+          >
             Get in touch
           </h2>
-          <p id="contact-modal-desc" className="mt-3 text-[16px] leading-[1.7] text-neutral-700">
+          <p
+            id="contact-modal-desc"
+            className="reveal-on-scroll mt-3 text-[16px] leading-[1.7] text-neutral-700"
+            data-reveal
+            data-reveal-delay={90}
+          >
             Connect on{' '}
             <a
               href="https://www.linkedin.com/in/ed-turner/"
@@ -122,7 +135,11 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             or email me directly.
           </p>
 
-          <div className="mt-6 flex items-center gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-4">
+          <div
+            className="reveal-on-scroll mt-6 flex items-center gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-4"
+            data-reveal
+            data-reveal-delay={140}
+          >
             <a
               href={`mailto:${email}`}
               className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-[15px] text-neutral-950"

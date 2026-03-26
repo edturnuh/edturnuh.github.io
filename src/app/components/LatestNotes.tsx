@@ -21,7 +21,7 @@ const notes = [
 export function LatestNotes() {
   return (
     <section id="notes" className="scroll-mt-24 py-16 md:py-20 border-t border-neutral-200">
-      <div className="max-w-3xl">
+      <div className="reveal-on-scroll max-w-3xl" data-reveal>
         <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 mb-5">
           Opinion
         </p>
@@ -34,8 +34,13 @@ export function LatestNotes() {
       </div>
 
       <div className="mt-10 grid gap-4 md:grid-cols-2">
-        {notes.map((note) => (
-          <article key={note.title} className="rounded-2xl border border-neutral-200 bg-white p-6">
+        {notes.map((note, index) => (
+          <article
+            key={note.title}
+            className="reveal-on-scroll rounded-2xl border border-neutral-200 bg-white p-6"
+            data-reveal
+            data-reveal-delay={index * 55}
+          >
             <h3 className="text-[20px] leading-[1.3] text-neutral-950">{note.title}</h3>
             <p className="mt-3 text-[15px] leading-[1.7] text-neutral-600">{note.summary}</p>
           </article>

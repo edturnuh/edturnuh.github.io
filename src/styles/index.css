@@ -39,8 +39,76 @@ html {
   display: inline;
 }
 
+.page-enter {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: page-enter 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-enter-delay-1 {
+  animation-delay: 40ms;
+}
+
+.page-enter-delay-2 {
+  animation-delay: 100ms;
+}
+
+.page-enter-delay-3 {
+  animation-delay: 170ms;
+}
+
+.page-enter-delay-4 {
+  animation-delay: 260ms;
+}
+
+.page-enter-stagger:nth-child(1) {
+  animation-delay: 330ms;
+}
+
+.page-enter-stagger:nth-child(2) {
+  animation-delay: 390ms;
+}
+
+.page-enter-stagger:nth-child(3) {
+  animation-delay: 450ms;
+}
+
+.reveal-on-scroll {
+  --reveal-delay: 0ms;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 560ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (min-width: 768px) {
   .mobile-break-only {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .page-enter {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

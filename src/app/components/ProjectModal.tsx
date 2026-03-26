@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { TetrisGame } from './TetrisGame';
+import { useScopedReveal } from '../useScopedReveal';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -24,8 +25,11 @@ interface ProjectModalProps {
 
 export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
+
+  useScopedReveal(isOpen, modalRef, scrollAreaRef);
 
   useEffect(() => {
     if (isOpen) {
@@ -135,17 +139,17 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
     >
         <div
           ref={modalRef}
-          className="flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-[#fcfcfa] shadow-xl"
+          className="animate-fade-in flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-[#fcfcfa] shadow-xl"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4 md:px-8">
-            <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
+            <p className="page-enter page-enter-delay-1 font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
               {project.subtitle}
             </p>
             <button
               ref={closeButtonRef}
               onClick={onClose}
-              className="inline-flex items-center gap-2 rounded-lg px-2 py-2 text-[14px] text-neutral-600 hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+              className="page-enter page-enter-delay-2 inline-flex items-center gap-2 rounded-lg px-2 py-2 text-[14px] text-neutral-600 hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-400"
               aria-label="Close case study"
             >
               <span className="font-mono uppercase tracking-[0.12em]">Close</span>
@@ -153,9 +157,9 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             </button>
           </div>
 
-        <div className="overflow-y-auto px-6 py-6 md:px-8 md:py-8">
+        <div ref={scrollAreaRef} className="overflow-y-auto px-6 py-6 md:px-8 md:py-8">
           {project.liveDemo !== 'tetris' && (
-            <div className="max-w-3xl">
+            <div className="reveal-on-scroll max-w-3xl" data-reveal data-reveal-delay={40}>
               <h2 id="case-study-title" className="text-[34px] leading-[1.08] tracking-[-0.03em] text-neutral-950 md:text-[42px]">
                 {project.client}
               </h2>
@@ -165,7 +169,9 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
           {project.liveDemo === 'tetris' && (
             <section
               aria-labelledby="case-study-title"
-              className="overflow-hidden rounded-xl border border-neutral-200 bg-white"
+              className="reveal-on-scroll overflow-hidden rounded-xl border border-neutral-200 bg-white"
+              data-reveal
+              data-reveal-delay={40}
             >
               <h2 id="case-study-title" className="sr-only">
                 {project.client}
@@ -176,7 +182,11 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             </section>
           )}
 
-          <section className={`rounded-xl border border-neutral-200 bg-white p-5 md:p-6 ${project.liveDemo === 'tetris' ? 'mt-5 md:mt-8' : 'mt-6 md:mt-8'}`}>
+          <section
+            className={`reveal-on-scroll rounded-xl border border-neutral-200 bg-white p-5 md:p-6 ${project.liveDemo === 'tetris' ? 'mt-5 md:mt-8' : 'mt-6 md:mt-8'}`}
+            data-reveal
+            data-reveal-delay={90}
+          >
             <h3 className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
               Overview
             </h3>
@@ -187,8 +197,13 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
           {project.liveDemo !== 'tetris' && project.metrics.length > 0 && (
             <div className="mt-4 grid grid-cols-3 gap-2 md:mt-5 md:gap-3">
-              {project.metrics.map((metric) => (
-                <div key={metric.label} className="rounded-lg border border-neutral-200 bg-white px-3 py-3 md:rounded-xl md:p-4">
+              {project.metrics.map((metric, index) => (
+                <div
+                  key={metric.label}
+                  className="reveal-on-scroll rounded-lg border border-neutral-200 bg-white px-3 py-3 md:rounded-xl md:p-4"
+                  data-reveal
+                  data-reveal-delay={120 + index * 45}
+                >
                   <div className="text-[24px] leading-none font-semibold tracking-[-0.03em] text-neutral-950 md:text-[28px]">
                     {metric.value}
                   </div>
@@ -201,7 +216,11 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
           )}
 
           {project.deepDive && (
-            <section className="mt-4 rounded-xl border border-neutral-200 bg-white p-5 md:p-6">
+            <section
+              className="reveal-on-scroll mt-4 rounded-xl border border-neutral-200 bg-white p-5 md:p-6"
+              data-reveal
+              data-reveal-delay={160}
+            >
               <h3 className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
                 Deep Dive
               </h3>
@@ -225,7 +244,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             </section>
           )}
 
-          <div className="mt-8 border-t border-neutral-200 pt-6">
+          <div className="reveal-on-scroll mt-8 border-t border-neutral-200 pt-6" data-reveal data-reveal-delay={210}>
             <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 mb-3">
               Tags
             </p>

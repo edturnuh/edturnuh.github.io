@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { FeaturedProjects } from './components/FeaturedProjects';
@@ -6,6 +7,58 @@ import { LatestNotes } from './components/LatestNotes';
 import { CallToAction } from './components/CallToAction';
 
 export default function App() {
+  useEffect(() => {
+    const revealElements = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-reveal]')
+    );
+
+    if (revealElements.length === 0) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      revealElements.forEach((element) => {
+        element.classList.add('is-visible');
+      });
+      return;
+    }
+
+    revealElements.forEach((element) => {
+      const delay = element.dataset.revealDelay;
+
+      if (delay) {
+        element.style.setProperty('--reveal-delay', `${delay}ms`);
+      }
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -10% 0px',
+      }
+    );
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#fcfcfa] text-neutral-950">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-neutral-950 focus:text-white focus:rounded-lg">

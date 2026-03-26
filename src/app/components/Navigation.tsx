@@ -61,16 +61,16 @@ export function Navigation() {
   return (
     <>
       <nav className="sticky top-0 z-40 border-b border-neutral-200 bg-[#fcfcfa]/95 backdrop-blur" role="navigation" aria-label="Main navigation">
-        <div className="max-w-[1120px] mx-auto px-6 md:px-12 py-5 flex items-center justify-between gap-6">
+        <div className="page-enter page-enter-delay-1 max-w-[1120px] mx-auto px-6 md:px-12 py-5 flex items-center justify-between gap-6">
           <a
             href="#top"
-            className="text-[15px] font-medium tracking-[0.01em] text-neutral-950"
+            className="text-[15px] font-medium tracking-[0.01em] text-neutral-950 transition-colors duration-200 hover:text-neutral-700"
             onClick={(event) => {
               event.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            Edward Turner
+            Ed Turner
           </a>
 
           <div className="hidden md:flex items-center gap-6">
@@ -78,7 +78,7 @@ export function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`text-[14px] underline-offset-4 hover:text-neutral-950 ${
+                className={`text-[14px] underline-offset-4 transition-colors duration-200 hover:text-neutral-950 ${
                   activeHref === item.href ? 'text-neutral-950 underline' : 'text-neutral-600'
                 }`}
               >
@@ -89,7 +89,7 @@ export function Navigation() {
 
           <button
             onClick={() => setContactOpen(true)}
-            className="rounded-xl border border-neutral-300 px-4 py-2 text-[14px] text-neutral-950 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+            className="cursor-pointer rounded-xl border border-neutral-300 px-4 py-2 text-[14px] text-neutral-950 transition-colors duration-200 hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-neutral-400"
             aria-haspopup="dialog"
           >
             Contact
