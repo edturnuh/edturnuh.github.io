@@ -6,7 +6,7 @@ export function CallToAction() {
 
   return (
     <>
-      <section id="contact" className="scroll-mt-24 py-16 md:py-20 border-t border-neutral-200">
+      <section id="contact" className="scroll-mt-24 border-t border-neutral-200 pt-16 pb-8 md:py-20">
         <div className="reveal-on-scroll overflow-hidden rounded-[28px] border border-neutral-200 bg-white" data-reveal>
           <div className="border-b border-neutral-200 px-6 py-4 md:px-8">
             <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
@@ -48,7 +48,7 @@ export function CallToAction() {
           </div>
         </div>
 
-        <footer className="reveal-on-scroll mt-12 border-t border-neutral-200 pt-6" data-reveal data-reveal-delay={100}>
+        <footer className="mt-12 border-t border-neutral-200 pt-6">
           <p className="text-[13px] text-neutral-500">© 2026 Edward Turner</p>
         </footer>
       </section>
