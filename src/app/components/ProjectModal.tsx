@@ -144,7 +144,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
         >
           <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4 md:px-8">
             <p className="page-enter page-enter-delay-1 font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500">
-              {project.subtitle}
+              {project.subtitle} | {project.result}
             </p>
             <button
               ref={closeButtonRef}

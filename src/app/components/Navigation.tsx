@@ -26,6 +26,13 @@ export function Navigation() {
     const updateActiveSection = () => {
       const scrollY = window.scrollY;
       const activationLine = scrollY + 240;
+      const distanceFromBottom =
+        document.documentElement.scrollHeight - (window.innerHeight + scrollY);
+
+      if (distanceFromBottom < 250) {
+        setActiveHref('');
+        return;
+      }
 
       if (activationLine < sections[0].element.offsetTop) {
         setActiveHref('');

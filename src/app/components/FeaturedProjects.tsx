@@ -95,10 +95,10 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     I managed full-stack development and all CRO work which, in conjunction with our ad agency, resulted in 4x ROAS (blended). Also secured $600k+ via Kickstarter and was featured as <a href="https://www.youtube.com/watch?v=i_kxgC6oLZE" target="_blank" rel="noopener noreferrer">Project of the Day</a> twice.`,
   },
   {
-    client: 'RSPCA website',
+    client: 'Volunteering for RSPCA',
     subtitle: '2026',
     result: 'RSPCA',
-    cardSupportingText: 'Voluntary campaign assistant',
+    cardSupportingText: 'Campaigns & operations',
     description: '',
     metrics: [],
     tags: ['AI', 'Wordpress'],
