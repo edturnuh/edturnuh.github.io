@@ -58,7 +58,7 @@ const projects: Project[] = [
       { label: 'WCAG issues', value: '-90%' },
     ],
     tags: ['Hubspot', 'Brand', 'CRO', 'Ops', 'WCAG', 'SEO'],
-    detailedDescription: `The brief was to roll out a new brand across our 400-page website, but the real opportunity was to use the rebuild to make the site materially stronger as a commercial asset. I used the project to deliver a step-change in quality, performance, compliance and scalability:
+    detailedDescription: `The brief was to roll out a new brand across our 400-page website, but the real opportunity was to use the rebuild to make the site materially stronger as a commercial asset. I used the project to deliver a step-change in quality, performance, scalability and compliance:
 
 • Migrate to latest HubSpot CMS → <strong>Done</strong>
 • Reshape website offering around flagship product → <strong>Organic conversion rate up 37% with a sustained increase in lead volume</strong>
