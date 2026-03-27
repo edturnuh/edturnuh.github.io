@@ -21,7 +21,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    client: 'Supporting £2bn of growth through CRO',
+    client: 'Supporting £1.6bn of growth through CRO',
     subtitle: '2026',
     result: 'Allica Bank',
     cardSupportingText: '+55% CVR while scaling',
