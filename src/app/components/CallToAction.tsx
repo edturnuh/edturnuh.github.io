@@ -17,10 +17,10 @@ export function CallToAction() {
           <div className="grid gap-8 px-6 py-8 md:grid-cols-[minmax(0,1.5fr)_minmax(280px,0.9fr)] md:gap-10 md:px-8 md:py-10">
             <div className="max-w-3xl">
               <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 md:text-[52px]">
-                Open to new roles in web management
+                Open to new roles in website management
               </h2>
               <p className="body-copy mt-5 text-neutral-700">
-                I'm keen to connect with great people, projects and organisations (including on pro bono basis). If you think I could add value, do get in touch.
+                I'm keen to connect with great people, projects and orgs (even on a pro bono basis). Chat soon :)
               </p>
             </div>
 
