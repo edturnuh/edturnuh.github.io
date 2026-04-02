@@ -21,7 +21,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    client: 'Supporting £1.6bn of growth through CRO',
+    client: 'Driving CRO within a £1.6bn growth story',
     subtitle: '2026',
     result: 'Allica Bank',
     cardSupportingText: '+55% CVR while scaling',
@@ -46,10 +46,10 @@ const projects: Project[] = [
     },
   },
   {
-    client: 'Rebuilding a bank\'s website in 4 months',
+    client: 'Rebuilding a bank\'s website into a scalable growth asset',
     subtitle: '2025',
     result: 'Allica Bank',
-    cardSupportingText: '+37% organic CVR',
+    cardSupportingText: 'Rapid 4-month rebuild',
     description: 'Rebuilt marketing site.',
 
     metrics: [
@@ -58,7 +58,7 @@ const projects: Project[] = [
       { label: 'WCAG issues', value: '-90%' },
     ],
     tags: ['Hubspot', 'Brand', 'CRO', 'Ops', 'WCAG', 'SEO'],
-    detailedDescription: `The brief was to roll out a new brand across our 400-page website, but the real opportunity was to use the rebuild to make the site materially stronger as a commercial asset. I used the project to deliver a step-change in quality, performance, scalability and compliance:
+    detailedDescription: `We needed to roll out a new brand across our 400-page website, but the real opportunity was to make the site scale more easily and perform better. I leveraged the project to deliver a step-change in quality, performance, scalability and compliance:
 
 • Migrate to latest HubSpot CMS → <strong>Done</strong>
 • Reshape website offering around flagship product → <strong>Organic conversion rate up 37% with a sustained increase in lead volume</strong>
@@ -67,7 +67,9 @@ const projects: Project[] = [
 • Conduct full on-page technical SEO audit → <strong>Done</strong>
 • Full audit and sign off from compliance/legal team → <strong>Done</strong>
 
-The strategy to launch in only 4 months revolved around a technical hack. We would prioritize rebuilding 21 high-traffic pages (accounting for ~80% site visits) and apply a 'transition theme' to all other pages (approx ~380) as a short-term fix. This theme would make them instantly look like the new brand (details below). 
+...in only 4 months. 
+
+Our ability to launch so quickly revolved around a technical hack. We would prioritize rebuilding 21 high-traffic pages (accounting for ~80% site visits) and apply a 'transition theme' to all other pages (approx ~380) as a short-term fix. This theme would make them instantly look like the new brand (details below). 
 
 Why was speed so important? To avoid maintaining two websites; to avoid sapping the team's bandwidth in such a fast-paced setup; to enable return to a single site ASAP.
 
@@ -79,7 +81,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     },
   },
   {
-    client: '$0 to $100k/month on Shopify',
+    client: 'From zero to $100k/month on Shopify',
     subtitle: '2022',
     result: 'TAUR',
     cardSupportingText: '4x blended ROAS',
@@ -95,10 +97,10 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     I managed full-stack development and all CRO work which, in conjunction with our ad agency, resulted in 4x ROAS (blended). Also secured $600k+ via Kickstarter and was featured as <a href="https://www.youtube.com/watch?v=i_kxgC6oLZE" target="_blank" rel="noopener noreferrer">Project of the Day</a> twice.`,
   },
   {
-    client: 'Volunteering for RSPCA',
+    client: 'Scaling campaign operations for the RSPCA',
     subtitle: '2026',
     result: 'RSPCA',
-    cardSupportingText: 'Campaigns & operations',
+    cardSupportingText: 'Charity work',
     description: '',
     metrics: [],
     tags: ['AI', 'Wordpress'],
@@ -107,10 +109,10 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     As a volunteer, I provide ongoing support to <a href="https://rspca-suffolkcentral.org.uk/" target="_blank" rel="noopener noreferrer">RSPCA Suffolk Central</a>, helping with campaigns, web operations and general website issues as needed.`,
   },
   {
-    client: 'Game of Tetris? 🕹️',
+    client: '🕹️ Launching a playable game in 4 mins 29 seconds',
     subtitle: '2026',
     result: 'For you',
-    cardSupportingText: 'Try this game AI made in 4m:29s',
+    cardSupportingText: 'Game of Tetris?',
     description: '',
     metrics: [
       { label: 'Board', value: '10×20' },
@@ -122,9 +124,9 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     detailedDescription: `I don't know if this AI project was 100x or 1000x faster than coding by hand... but does it matter? I launched a lightweight, responsive, keyboard-friendly, accessible, browser-based Tetris game in 4 minutes and 29 seconds. I love it so much I left it unpolished.`,
   },
   {
-    client: 'Building a portfolio with AI',
+    client: 'Building a fully custom website 10x faster with AI',
     subtitle: '2026',
-    cardSupportingText: '10x faster dev',
+    cardSupportingText: 'AI-native dev workflow',
     result: 'For Me',
     description: 'Designed in Figma, built with Codex—shipped in hours instead of weeks.',
     metrics: [
