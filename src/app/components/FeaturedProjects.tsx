@@ -94,7 +94,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     tags: ['E-commerce', 'CRO', 'SEO', 'User acquisition'],
     detailedDescription: `As founding marketer lead at TAUR Technologies, I launched and scaled the e-commerce site for the world's first premium electric scooter brand. It ran at ~$100k/month worth of pre-orders during its peak, and ultimately drove $2m worth of pre-orders. 
     
-    I managed full-stack development and all CRO work which, in conjunction with our ad agency, resulted in 4x ROAS (blended). Also secured $600k+ via Kickstarter and was featured as <a href="https://www.youtube.com/watch?v=i_kxgC6oLZE" target="_blank" rel="noopener noreferrer">Project of the Day</a> twice.`,
+    I managed full-stack development and all CRO work which, alongside our ad performance optimisation, resulted in 4x blended ROAS. Also secured $600k+ via Kickstarter and was featured as <a href="https://www.youtube.com/watch?v=i_kxgC6oLZE" target="_blank" rel="noopener noreferrer">Project of the Day</a> twice.`,
   },
   {
     client: 'Scaling campaign operations for the RSPCA',
@@ -153,16 +153,22 @@ export function FeaturedProjects() {
     <>
       <section id="projects" className="scroll-mt-24 border-t border-neutral-200 py-16 dark:border-[#8cb4ff]/15 md:py-20">
         <div className="max-w-[1120px] mx-auto px-6 md:px-12">
-          <div className="reveal-on-scroll max-w-3xl" data-reveal>
-            <p className="mb-5 font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 dark:text-[#95abd3]">
+          <div className="max-w-3xl">
+            <p
+              className="reveal-on-scroll mb-5 font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 dark:text-[#95abd3]"
+              data-reveal
+              data-laptop-preload
+            >
               Case Studies
             </p>
-            <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 dark:text-[#f2f7ff] md:text-[52px]">
+            <div className="reveal-on-scroll" data-reveal>
+              <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 dark:text-[#f2f7ff] md:text-[52px]">
               Selected work
-            </h2>
-            <p className="body-copy mt-5 text-neutral-700 dark:text-[#cddcf5]">
-              I've just started documenting work in this portfolio; major commercial projects as well as personal stuff.
-            </p>
+              </h2>
+              <p className="body-copy mt-5 text-neutral-700 dark:text-[#cddcf5]">
+                I've just started documenting work in this portfolio; major commercial projects as well as personal stuff.
+              </p>
+            </div>
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2">

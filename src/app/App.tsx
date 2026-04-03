@@ -11,6 +11,9 @@ export default function App() {
     const revealElements = Array.from(
       document.querySelectorAll<HTMLElement>('[data-reveal]')
     );
+    const laptopPreloadElements = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-laptop-preload]')
+    );
 
     if (revealElements.length === 0) {
       return;
@@ -39,6 +42,7 @@ export default function App() {
     ).matches;
     const heroAnimationDurationMs = 1090;
     let observer: IntersectionObserver | null = null;
+    let laptopPreloadTimeout: number | null = null;
 
     const setupRevealObserver = () => {
       if (isLargeDesktopViewport) {
@@ -75,6 +79,14 @@ export default function App() {
       });
     };
 
+    if (!isMobileViewport && !isLargeDesktopViewport && laptopPreloadElements.length > 0) {
+      laptopPreloadTimeout = window.setTimeout(() => {
+        laptopPreloadElements.forEach((element) => {
+          element.classList.add('is-visible');
+        });
+      }, heroAnimationDurationMs);
+    }
+
     const revealSetupTimeout = isLargeDesktopViewport
       ? window.setTimeout(setupRevealObserver, heroAnimationDurationMs)
       : null;
@@ -86,6 +98,10 @@ export default function App() {
     return () => {
       if (revealSetupTimeout !== null) {
         window.clearTimeout(revealSetupTimeout);
+      }
+
+      if (laptopPreloadTimeout !== null) {
+        window.clearTimeout(laptopPreloadTimeout);
       }
 
       observer?.disconnect();
