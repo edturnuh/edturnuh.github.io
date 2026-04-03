@@ -124,13 +124,13 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     detailedDescription: `I don't know if this AI project was 100x or 1000x faster than coding by hand... but does it matter? I launched a lightweight, responsive, keyboard-friendly, accessible, browser-based Tetris game in 4 minutes and 29 seconds. I love it so much I left it unpolished.`,
   },
   {
-    client: 'Building a fully custom website 10x faster with AI',
+    client: 'Coding a fully custom website 1000x faster with AI',
     subtitle: '2026',
     cardSupportingText: 'AI-native dev workflow',
     result: 'For Me',
     description: 'Designed in Figma, built with Codex—shipped in hours instead of weeks.',
     metrics: [
-      { label: 'Faster Dev', value: '100x' },
+      { label: 'Faster Dev', value: '1000x' },
       { label: 'Day build', value: '2' },
       
       
@@ -138,7 +138,11 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
     tags: ['AI', 'Rapid Prototyping'],
     detailedDescription: `I wanted a portfolio site that showcased real work without spending weeks coding on some boilerplate template. So, I outlined the site in ChatGPT and Figma, then built it via Codex as a React + TypeScript + Vite site with Tailwind CSS and custom components. WCAG compliant. Hosted on Github. 
     
-    The result? This site! It's a custom, performant website built in 2 days. The web development portion of that time was a tiny fraction. Development at this speed is mind-blowing, and in my opinion, the output quality is higher because I felt so free to explore design, writing and development on the fly.`,
+    The result? This site! A custom, performant website built in 2 days. 
+    
+    The web development portion of the 2 days was a tiny fraction. Coding at this speed is mind-blowing, and in my opinion, resulted in higher output quality because I felt so free to explore design, writing and development on the fly. 
+    
+    For example, the dark mode function (in the navigation bar) took about 30s to code, which meant I could spend 20 minutes enjoying choosing the color pallette that felt right for me. Give it a try!`,
   },
 ];
 
@@ -147,16 +151,16 @@ export function FeaturedProjects() {
 
   return (
     <>
-      <section id="projects" className="scroll-mt-24 py-16 md:py-20 border-t border-neutral-200">
+      <section id="projects" className="scroll-mt-24 border-t border-neutral-200 py-16 dark:border-[#8cb4ff]/15 md:py-20">
         <div className="max-w-[1120px] mx-auto px-6 md:px-12">
           <div className="reveal-on-scroll max-w-3xl" data-reveal>
-            <p className="font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 mb-5">
+            <p className="mb-5 font-mono text-[13px] uppercase tracking-[0.16em] text-neutral-500 dark:text-[#95abd3]">
               Case Studies
             </p>
-            <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 md:text-[52px]">
+            <h2 className="text-[36px] leading-[1.02] tracking-[-0.04em] text-neutral-950 dark:text-[#f2f7ff] md:text-[52px]">
               Selected work
             </h2>
-            <p className="body-copy mt-5 text-neutral-700">
+            <p className="body-copy mt-5 text-neutral-700 dark:text-[#cddcf5]">
               I've just started documenting work in this portfolio; major commercial projects as well as personal stuff.
             </p>
           </div>

@@ -48,6 +48,23 @@
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#000000" />
+    <script>
+      (() => {
+        const override = window.sessionStorage.getItem('theme-override');
+        const hour = new Date().getHours();
+        const defaultTheme = hour >= 19 || hour < 7 ? 'dark' : 'light';
+        const theme = override === 'light' || override === 'dark' ? override : defaultTheme;
+        const root = document.documentElement;
+
+        root.classList.toggle('dark', theme === 'dark');
+        root.dataset.theme = theme;
+
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) {
+          themeColor.setAttribute('content', theme === 'dark' ? '#050814' : '#fcfcfa');
+        }
+      })();
+    </script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
