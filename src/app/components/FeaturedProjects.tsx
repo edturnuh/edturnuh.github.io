@@ -166,7 +166,7 @@ export function FeaturedProjects() {
               Selected work
               </h2>
               <p className="body-copy mt-5 text-neutral-700 dark:text-[#cddcf5]">
-                I've just started documenting work in this portfolio; major B2B projects as well as personal stuff.
+                I've just started documenting work in this portfolio; major B2B and B2C projects as well as personal stuff.
               </p>
             </div>
           </div>
