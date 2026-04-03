@@ -20,7 +20,7 @@ export function AboutPreview() {
           </h2>
           <div className="body-copy mt-6 space-y-4 text-neutral-700 dark:text-[#cddcf5]">
             <p>I made my first website when I was 9. I've been hooked ever since.</p> 
-            <p>Years later, I started work in marketing, focussing on digital acquisition– but was always the “website guy.” After 8 years, I doubled down, specialising in public marketing sites. I’m now in my third year as a website product manager, based in the UK.</p>
+            <p>Years later, I started work in marketing, focussing on digital acquisition– but was always the “website guy” too. After 8 years, I doubled down, specialising in public marketing sites. I’m now in my third year as a website product manager, based in the UK.</p>
             <p>I like to work fast. AI is changing the game...</p>
           </div>
         </div>
