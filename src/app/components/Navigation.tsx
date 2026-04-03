@@ -82,7 +82,7 @@ export function Navigation() {
 
   return (
     <>
-      <nav className="sticky top-0 z-40 border-b border-neutral-200 bg-[#fcfcfa]/95 backdrop-blur transition-colors duration-300 dark:border-[#8cb4ff]/15 dark:bg-[#050814]/95" role="navigation" aria-label="Main navigation">
+      <nav className="sticky top-0 z-40 border-b border-neutral-200 bg-[#fcfcfa]/95 pt-[env(safe-area-inset-top)] backdrop-blur transition-colors duration-300 dark:border-[#8cb4ff]/15 dark:bg-[#050814]/95" role="navigation" aria-label="Main navigation">
         <div className="page-enter page-enter-delay-1 mx-auto flex max-w-[1120px] items-center justify-between gap-4 px-6 py-5 md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 md:px-12">
           <a
             href="#top"
