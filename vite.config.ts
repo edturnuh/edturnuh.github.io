@@ -22,6 +22,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'),
         darkModePreview: path.resolve(__dirname, 'dark-mode-preview.html'),
+        analyticsOptOut: path.resolve(__dirname, 'analytics-opt-out.html'),
       },
     },
   },

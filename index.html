@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSFRL4CNV1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      (() => {
+        const measurementId = 'G-PSFRL4CNV1';
+        const optOutCookieName = 'analytics_opt_out';
+        const hasOptOutCookie = document.cookie
+          .split('; ')
+          .some((cookie) => cookie === `${optOutCookieName}=1`);
 
-      gtag('config', 'G-PSFRL4CNV1');
+        window[`ga-disable-${measurementId}`] = hasOptOutCookie;
+
+        if (hasOptOutCookie) {
+          return;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+
+        const googleTagScript = document.createElement('script');
+        googleTagScript.async = true;
+        googleTagScript.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+        document.head.appendChild(googleTagScript);
+
+        window.gtag('js', new Date());
+        window.gtag('config', measurementId);
+      })();
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />

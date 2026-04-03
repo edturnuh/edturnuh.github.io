@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <title>Analytics Opt-Out</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4f1ea;
+        --card: #ffffff;
+        --border: rgba(15, 23, 42, 0.12);
+        --text: #171717;
+        --muted: #5f5f66;
+        --primary: #050814;
+        --primary-text: #f2f7ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Inter, system-ui, sans-serif;
+        background: linear-gradient(180deg, #f4f1ea 0%, #f7f5ef 24%, #eae6de 100%);
+        color: var(--text);
+      }
+
+      main {
+        width: min(680px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 3rem 0;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        box-shadow: 0 20px 70px rgba(15, 23, 42, 0.08);
+        overflow: hidden;
+      }
+
+      .section {
+        padding: 1.5rem;
+      }
+
+      .section + .section {
+        border-top: 1px solid var(--border);
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      h1 {
+        margin: 1rem 0 0;
+        font-size: clamp(2.4rem, 6vw, 4.25rem);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+      }
+
+      p {
+        margin: 1rem 0 0;
+        font-size: 15px;
+        line-height: 1.75;
+        color: var(--muted);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+
+      button,
+      a.button-link {
+        appearance: none;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        padding: 0.8rem 1rem;
+        font: inherit;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 180ms ease;
+      }
+
+      button.primary {
+        background: var(--primary);
+        color: var(--primary-text);
+        border-color: var(--primary);
+      }
+
+      button.primary:hover,
+      button.primary:focus-visible {
+        background: #0b1629;
+        border-color: #0b1629;
+      }
+
+      button.secondary,
+      a.button-link {
+        background: white;
+        color: var(--text);
+      }
+
+      button.secondary:hover,
+      button.secondary:focus-visible,
+      a.button-link:hover,
+      a.button-link:focus-visible {
+        background: #f5f5f5;
+      }
+
+      .status {
+        margin-top: 1rem;
+        min-height: 1.5rem;
+        font-size: 14px;
+        color: var(--text);
+      }
+
+      ul {
+        margin: 1rem 0 0;
+        padding-left: 1.1rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <section class="section">
+          <p class="eyebrow">Private Utility</p>
+          <h1>Exclude this device from analytics</h1>
+          <p>
+            Visit this page on your own laptops and phone. It sets a cookie that tells the main site not to load Google Analytics on this device in future.
+          </p>
+          <div class="actions">
+            <button id="opt-out" class="primary" type="button">Exclude This Device</button>
+            <button id="clear-opt-out" class="secondary" type="button">Re-enable Analytics</button>
+            <a class="button-link" href="/">Back to site</a>
+          </div>
+          <div id="status" class="status" aria-live="polite"></div>
+        </section>
+
+        <section class="section">
+          <p class="eyebrow">Notes</p>
+          <ul>
+            <li>This page is marked <code>noindex</code> and blocked in <code>robots.txt</code>.</li>
+            <li>The opt-out is stored in a cookie named <code>analytics_opt_out</code>.</li>
+            <li>This page never loads Google Analytics, so visiting it won’t create a pageview.</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      (() => {
+        const cookieName = 'analytics_opt_out';
+        const cookieValue = '1';
+        const maxAgeSeconds = 60 * 60 * 24 * 365 * 5;
+        const status = document.getElementById('status');
+        const optOutButton = document.getElementById('opt-out');
+        const clearOptOutButton = document.getElementById('clear-opt-out');
+
+        function hasOptOutCookie() {
+          return document.cookie
+            .split('; ')
+            .some((cookie) => cookie === `${cookieName}=${cookieValue}`);
+        }
+
+        function writeOptOutCookie() {
+          document.cookie = `${cookieName}=${cookieValue}; Max-Age=${maxAgeSeconds}; Path=/; SameSite=Lax; Secure`;
+        }
+
+        function clearOptOutCookie() {
+          document.cookie = `${cookieName}=; Max-Age=0; Path=/; SameSite=Lax; Secure`;
+        }
+
+        function updateStatus() {
+          status.textContent = hasOptOutCookie()
+            ? 'This device is currently excluded from analytics.'
+            : 'Analytics is currently enabled on this device.';
+        }
+
+        optOutButton.addEventListener('click', () => {
+          writeOptOutCookie();
+          updateStatus();
+        });
+
+        clearOptOutButton.addEventListener('click', () => {
+          clearOptOutCookie();
+          updateStatus();
+        });
+
+        updateStatus();
+      })();
+    </script>
+  </body>
+</html>
