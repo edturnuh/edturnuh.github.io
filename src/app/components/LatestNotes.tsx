@@ -13,7 +13,7 @@ const notes = [
   },
   {
     title: 'Collabs',
-    summary: 'AI-driven development is the easy bit now. If you need a hand to build something cool – let alone making it successful – I’d love to connect. Pro bono work welcome :)',
+    summary: 'AI-driven development is the easy bit now. If you need a hand building something cool, or making it successful, I’d love to connect.',
   }
   
 ];

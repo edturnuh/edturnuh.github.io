@@ -21,7 +21,7 @@ export function CallToAction() {
                 Open to new roles in website management
               </h2>
               <p className="body-copy mt-5 text-neutral-700 dark:text-[#cddcf5]">
-                Full time or fractional, I'm keen to connect with great people and projects. Pro bono welcome. Let's get on a call.
+                Full-time or fractional. I'm always keen to connect with great people and projects, including pro bono. Let's get on a call.
               </p>
             </div>
 
