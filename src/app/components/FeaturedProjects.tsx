@@ -93,7 +93,7 @@ Smooth off-peak rollout on call with ~35 stakeholders/testers, each assigned lau
       
     ],
     tags: ['E-commerce', 'CRO', 'SEO', 'User acquisition'],
-    detailedDescription: `As founding marketer lead at TAUR Technologies, I launched and scaled the e-commerce site for the world's first premium electric scooter brand. It ran at ~$100k/month worth of pre-orders during its peak, and ultimately drove $2m worth of pre-orders. 
+    detailedDescription: `As founding marketer lead at TAUR Technologies, I launched and scaled the e-commerce site for the world's first premium electric scooter brand. It ran at ~$100k/month worth of pre-orders during its peak, and ultimately delivered a multi-million $ order book. 
     
     I managed full-stack development and all CRO work which, alongside our ad performance optimisation, resulted in 4x blended ROAS. Also secured $600k+ via Kickstarter and was featured as <a href="https://www.youtube.com/watch?v=i_kxgC6oLZE" target="_blank" rel="noopener noreferrer">Project of the Day</a> twice.`,
   },
