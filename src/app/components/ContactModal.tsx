@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { X, Copy, Check } from 'lucide-react';
 import { useScopedReveal } from '../useScopedReveal';
+import { getCurrentTheme, trackEvent } from '../lib/analytics';
 
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
+  openSource: 'nav' | 'contact_section';
 }
 
-export function ContactModal({ isOpen, onClose }: ContactModalProps) {
+export function ContactModal({ isOpen, onClose, openSource }: ContactModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
@@ -20,6 +22,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     if (isOpen) {
       previousFocusRef.current = document.activeElement as HTMLElement;
       document.body.style.overflow = 'hidden';
+      trackEvent('contact_modal_open', {
+        open_source: openSource,
+        theme: getCurrentTheme(),
+      });
       requestAnimationFrame(() => closeButtonRef.current?.focus());
     } else {
       document.body.style.overflow = 'unset';
@@ -29,7 +35,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen]);
+  }, [isOpen, openSource]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -66,6 +72,12 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(email);
+      trackEvent('email_copy_click', {
+        link_type: 'email',
+        contact_method: 'copy',
+        open_source: openSource,
+        theme: getCurrentTheme(),
+      });
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -75,6 +87,12 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       textarea.select();
       document.execCommand('copy');
       document.body.removeChild(textarea);
+      trackEvent('email_copy_click', {
+        link_type: 'email',
+        contact_method: 'copy',
+        open_source: openSource,
+        theme: getCurrentTheme(),
+      });
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
@@ -128,6 +146,13 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               href="https://www.linkedin.com/in/ed-turner/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent('linkedin_click', {
+                  link_type: 'linkedin',
+                  open_source: 'contact_modal',
+                  theme: getCurrentTheme(),
+                })
+              }
               className="underline underline-offset-4"
             >
               LinkedIn
@@ -142,6 +167,14 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           >
             <a
               href={`mailto:${email}`}
+              onClick={() =>
+                trackEvent('email_click', {
+                  link_type: 'email',
+                  contact_method: 'mailto',
+                  open_source: openSource,
+                  theme: getCurrentTheme(),
+                })
+              }
               className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-[15px] text-neutral-950 dark:text-[#f2f7ff]"
             >
               {email}

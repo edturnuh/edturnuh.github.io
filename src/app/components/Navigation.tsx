@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { ContactModal } from './ContactModal';
 import { applyTheme, getPreferredTheme, setThemeOverride, type ThemeMode } from '../theme';
+import { trackEvent } from '../lib/analytics';
 
 const navItems = [
   { href: '#projects', label: 'Selected Work' },
@@ -112,8 +113,14 @@ export function Navigation() {
           <div className="flex shrink-0 items-center justify-self-end gap-2">
             <button
               onClick={() => {
+                const previousTheme = theme;
                 setTheme(nextTheme);
                 setThemeOverride(nextTheme);
+                trackEvent('theme_toggle', {
+                  theme_from: previousTheme,
+                  theme_to: nextTheme,
+                  toggle_location: 'nav',
+                });
               }}
               className={themeToggleClassName}
               aria-label={`Switch to ${nextTheme} mode`}
@@ -124,7 +131,14 @@ export function Navigation() {
             </button>
 
             <button
-              onClick={() => setContactOpen(true)}
+              onClick={() => {
+                trackEvent('contact_cta_click', {
+                  cta_location: 'nav',
+                  page_section: 'navigation',
+                  theme,
+                });
+                setContactOpen(true);
+              }}
               className="cursor-pointer rounded-xl border border-neutral-300 px-4 py-2 text-[14px] text-neutral-950 transition-colors duration-200 hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:border-[#8cb4ff]/18 dark:bg-[#091021] dark:text-[#f2f7ff] dark:hover:bg-[#0d1830] dark:focus:ring-[#78c8ff]/25"
               aria-haspopup="dialog"
             >
@@ -133,7 +147,7 @@ export function Navigation() {
           </div>
         </div>
       </nav>
-      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} openSource="nav" />
     </>
   );
 }

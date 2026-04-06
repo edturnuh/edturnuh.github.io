@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ContactModal } from './ContactModal';
+import { getCurrentTheme, trackEvent } from '../lib/analytics';
 
 export function CallToAction() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -30,7 +31,14 @@ export function CallToAction() {
               </p>
               <div className="mt-4 flex flex-col gap-3">
                 <button
-                  onClick={() => setContactOpen(true)}
+                  onClick={() => {
+                    trackEvent('contact_cta_click', {
+                      cta_location: 'contact_section',
+                      page_section: 'contact',
+                      theme: getCurrentTheme(),
+                    });
+                    setContactOpen(true);
+                  }}
                   className="cursor-pointer rounded-xl bg-neutral-950 px-5 py-3 text-[15px] text-white transition-colors duration-200 hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:bg-[#78c8ff] dark:text-[#071524] dark:hover:bg-[#95d7ff] dark:focus:ring-[#78c8ff]/30"
                 >
                   Contact
@@ -39,6 +47,13 @@ export function CallToAction() {
                   href="https://www.linkedin.com/in/ed-turner/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent('linkedin_click', {
+                      link_type: 'linkedin',
+                      open_source: 'contact_section',
+                      theme: getCurrentTheme(),
+                    })
+                  }
                   className="cursor-pointer rounded-xl border border-neutral-300 bg-white px-5 py-3 text-center text-[15px] text-neutral-900 transition-colors duration-200 hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:border-[#8cb4ff]/18 dark:bg-[#091021] dark:text-[#f2f7ff] dark:hover:bg-[#0d1830] dark:focus:ring-[#78c8ff]/25"
                 >
                   LinkedIn
@@ -53,7 +68,11 @@ export function CallToAction() {
         </footer>
       </section>
 
-      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+      <ContactModal
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
+        openSource="contact_section"
+      />
     </>
   );
 }

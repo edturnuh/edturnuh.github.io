@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { TetrisGame } from './TetrisGame';
 import { useScopedReveal } from '../useScopedReveal';
+import { getCurrentTheme, trackEvent } from '../lib/analytics';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -35,6 +36,20 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
     if (isOpen) {
       previousFocusRef.current = document.activeElement as HTMLElement;
       document.body.style.overflow = 'hidden';
+      trackEvent('project_modal_open', {
+        project_name: project.client,
+        project_client: project.result,
+        project_type: project.liveDemo === 'tetris' ? 'live_demo' : 'case_study',
+        theme: getCurrentTheme(),
+      });
+
+      if (project.liveDemo === 'tetris') {
+        trackEvent('tetris_start', {
+          entry_source: 'project_modal',
+          theme: getCurrentTheme(),
+        });
+      }
+
       requestAnimationFrame(() => closeButtonRef.current?.focus());
     } else {
       document.body.style.overflow = 'unset';
@@ -43,7 +58,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen]);
+  }, [isOpen, project.client, project.liveDemo, project.result]);
 
   useEffect(() => {
     if (!isOpen) return;

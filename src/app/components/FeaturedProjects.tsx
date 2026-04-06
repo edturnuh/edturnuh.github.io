@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 import { ProjectModal } from './ProjectModal';
+import { getCurrentTheme, trackEvent } from '../lib/analytics';
 
 type Project = {
   client: string;
@@ -177,7 +178,15 @@ export function FeaturedProjects() {
                 key={project.client}
                 project={project}
                 revealDelay={index * 60}
-                onClick={() => setSelectedProject(project)}
+                onClick={() => {
+                  trackEvent('project_card_click', {
+                    project_name: project.client,
+                    project_client: project.result,
+                    project_type: project.liveDemo === 'tetris' ? 'live_demo' : 'case_study',
+                    theme: getCurrentTheme(),
+                  });
+                  setSelectedProject(project);
+                }}
               />
             ))}
           </div>

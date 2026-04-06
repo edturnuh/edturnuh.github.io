@@ -5,6 +5,7 @@ import { FeaturedProjects } from './components/FeaturedProjects';
 import { AboutPreview } from './components/AboutPreview';
 import { LatestNotes } from './components/LatestNotes';
 import { CallToAction } from './components/CallToAction';
+import { getCurrentTheme, trackEvent } from './lib/analytics';
 
 export default function App() {
   useEffect(() => {
@@ -105,6 +106,42 @@ export default function App() {
       }
 
       observer?.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const thresholds = [25, 50, 75, 100];
+    const reachedThresholds = new Set<number>();
+
+    const trackScrollDepth = () => {
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+      if (documentHeight <= 0) {
+        return;
+      }
+
+      const progress = Math.min(100, Math.round((window.scrollY / documentHeight) * 100));
+
+      thresholds.forEach((threshold) => {
+        if (progress < threshold || reachedThresholds.has(threshold)) {
+          return;
+        }
+
+        reachedThresholds.add(threshold);
+        trackEvent('scroll_depth', {
+          percent_scrolled: threshold,
+          theme: getCurrentTheme(),
+        });
+      });
+    };
+
+    trackScrollDepth();
+    window.addEventListener('scroll', trackScrollDepth, { passive: true });
+    window.addEventListener('resize', trackScrollDepth);
+
+    return () => {
+      window.removeEventListener('scroll', trackScrollDepth);
+      window.removeEventListener('resize', trackScrollDepth);
     };
   }, []);
 

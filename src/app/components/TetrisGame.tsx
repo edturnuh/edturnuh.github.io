@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { trackEvent } from '../lib/analytics';
 
 const BOARD_WIDTH = 10;
 const BOARD_HEIGHT = 20;
@@ -305,10 +306,38 @@ function renderMiniPreview(kind: PieceKind): string[][] {
 export function TetrisGame() {
   const [game, setGame] = useState<GameState>(() => createInitialState());
   const containerRef = useRef<HTMLDivElement>(null);
+  const hasTrackedEngagementRef = useRef(false);
+  const previousGameOverRef = useRef(false);
+
+  const trackTetrisEngagement = (engagementType: string, inputMethod: 'keyboard' | 'button') => {
+    if (hasTrackedEngagementRef.current) {
+      return;
+    }
+
+    hasTrackedEngagementRef.current = true;
+    trackEvent('tetris_engaged', {
+      engagement_type: engagementType,
+      input_method: inputMethod,
+    });
+  };
 
   useEffect(() => {
     containerRef.current?.focus();
   }, []);
+
+  useEffect(() => {
+    if (!game.isGameOver || previousGameOverRef.current) {
+      previousGameOverRef.current = game.isGameOver;
+      return;
+    }
+
+    trackEvent('tetris_game_over', {
+      score: game.score,
+      lines_cleared: game.lines,
+      level_reached: game.level,
+    });
+    previousGameOverRef.current = true;
+  }, [game.isGameOver, game.level, game.lines, game.score]);
 
   useEffect(() => {
     if (game.isPaused || game.isGameOver) return;
@@ -336,34 +365,42 @@ export function TetrisGame() {
       switch (event.key) {
         case 'ArrowLeft':
           event.preventDefault();
+          trackTetrisEngagement('move', 'keyboard');
           setGame((current) => movePiece(current, -1, 0));
           break;
         case 'ArrowRight':
           event.preventDefault();
+          trackTetrisEngagement('move', 'keyboard');
           setGame((current) => movePiece(current, 1, 0));
           break;
         case 'ArrowDown':
           event.preventDefault();
+          trackTetrisEngagement('move', 'keyboard');
           setGame((current) => movePiece(current, 0, 1));
           break;
         case 'ArrowUp':
         case 'x':
         case 'X':
           event.preventDefault();
+          trackTetrisEngagement('rotate', 'keyboard');
           setGame((current) => rotatePiece(current));
           break;
         case ' ':
           event.preventDefault();
+          trackTetrisEngagement('drop', 'keyboard');
           setGame((current) => hardDrop(current));
           break;
         case 'p':
         case 'P':
           event.preventDefault();
+          trackTetrisEngagement('pause', 'keyboard');
           setGame((current) => ({ ...current, isPaused: !current.isPaused }));
           break;
         case 'r':
         case 'R':
           event.preventDefault();
+          trackTetrisEngagement('restart', 'keyboard');
+          previousGameOverRef.current = false;
           setGame(createInitialState());
           break;
         default:
@@ -468,42 +505,60 @@ export function TetrisGame() {
             <div className="mt-4 grid grid-cols-2 gap-2">
               <button
                 type="button"
-                onClick={() => setGame((current) => rotatePiece(current))}
+                onClick={() => {
+                  trackTetrisEngagement('rotate', 'button');
+                  setGame((current) => rotatePiece(current));
+                }}
                 className="rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm text-white transition-colors hover:bg-white/10"
               >
                 Rotate
               </button>
               <button
                 type="button"
-                onClick={() => setGame((current) => ({ ...current, isPaused: !current.isPaused }))}
+                onClick={() => {
+                  trackTetrisEngagement('pause', 'button');
+                  setGame((current) => ({ ...current, isPaused: !current.isPaused }));
+                }}
                 className="rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm text-white transition-colors hover:bg-white/10"
               >
                 {game.isPaused ? 'Resume' : 'Pause'}
               </button>
               <button
                 type="button"
-                onClick={() => setGame((current) => movePiece(current, -1, 0))}
+                onClick={() => {
+                  trackTetrisEngagement('move', 'button');
+                  setGame((current) => movePiece(current, -1, 0));
+                }}
                 className="rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm text-white transition-colors hover:bg-white/10"
               >
                 Move Left
               </button>
               <button
                 type="button"
-                onClick={() => setGame((current) => movePiece(current, 1, 0))}
+                onClick={() => {
+                  trackTetrisEngagement('move', 'button');
+                  setGame((current) => movePiece(current, 1, 0));
+                }}
                 className="rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm text-white transition-colors hover:bg-white/10"
               >
                 Move Right
               </button>
               <button
                 type="button"
-                onClick={() => setGame((current) => movePiece(current, 0, 1))}
+                onClick={() => {
+                  trackTetrisEngagement('move', 'button');
+                  setGame((current) => movePiece(current, 0, 1));
+                }}
                 className="rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm text-white transition-colors hover:bg-white/10"
               >
                 Soft Drop
               </button>
               <button
                 type="button"
-                onClick={() => setGame((current) => hardDrop(current))}
+                onClick={() => {
+                  trackTetrisEngagement('drop', 'button');
+                  setGame((current) => hardDrop(current));
+                }}
                 className="rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm text-white transition-colors hover:bg-white/10"
               >
                 Hard Drop
@@ -512,7 +567,11 @@ export function TetrisGame() {
 
             <button
               type="button"
-              onClick={() => setGame(createInitialState())}
+              onClick={() => {
+                trackTetrisEngagement('restart', 'button');
+                previousGameOverRef.current = false;
+                setGame(createInitialState());
+              }}
               className="mt-3 w-full rounded-xl border border-white/10 bg-white px-3 py-2.5 text-sm font-medium text-black transition-opacity hover:opacity-90"
             >
               Restart Game
