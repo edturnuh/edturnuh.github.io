@@ -4,8 +4,16 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "fetch:content": "node scripts/fetch-sanity-content.mjs",
+    "prebuild": "npm run fetch:content",
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "studio": "npm --prefix studio run dev",
+    "studio:build": "npm --prefix studio run build",
+    "studio:deploy": "npm --prefix studio run deploy",
+    "studio:import": "npm --prefix studio run import:seed",
+    "studio:login": "npm --prefix studio run login",
+    "studio:schema": "npm --prefix studio run schema:deploy"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

@@ -1,22 +1,6 @@
-const notes = [
-  {
-    title: 'The future of web',
-    summary: 'AI has made building a good web page accessible to almost anyone. At the same time, personal agents (e.g. Openclaw) now visit sites on our behalf anyway. Most sites will become agent-first (AEO/GEO) and/or replaced by corporate agents. Luxury brands may retain human-first websites.',
-  },
-  {
-    title: 'Tools / Tech',
-    summary: 'I\'m sorry (not sorry) that I\'ll never hand-code again. I\'m absolutely blown away by Codex, Figma and OpenClaw. Getting heavily into JS also. Also, who knew that adding the prompt "make it WCAG accessible" could keep AI so on track?',
-  },
-  {
-    title: 'Website management',
-    summary: 'Building a \'good\' website just isn\'t difficult anymore. The value is in the system that iterates and delivers outcomes. I believe product managers and ICs will merge.',
-  },
-  {
-    title: 'Collabs',
-    summary: 'AI-driven development is the easy bit now. If you need a hand building something cool, or making it successful, I’d love to connect.',
-  }
-  
-];
+import content from '../content/generatedContent.json';
+
+const notes = content.notes;
 
 export function LatestNotes() {
   return (

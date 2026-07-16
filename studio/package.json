@@ -1,0 +1,21 @@
+{
+  "name": "edturnuh-sanity-studio",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "import:seed": "sanity datasets import ../sanity/seed/production.ndjson --dataset production --replace",
+    "login": "sanity login",
+    "schema:deploy": "sanity schemas deploy"
+  },
+  "dependencies": {
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "sanity": "^6.5.0",
+    "styled-components": "^6.1.19"
+  },
+  "devDependencies": {}
+}
